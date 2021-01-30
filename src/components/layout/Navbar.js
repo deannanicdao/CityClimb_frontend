@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 
 const Navbar = () => {
     return (
-        <Fragment>
-            Testing Components!!
-        </Fragment>
+        <div>
+            <h1>Navbar</h1>
+        </div>
     )
 }
 
