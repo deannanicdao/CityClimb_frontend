@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, Fragment } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-function App() {
+import Navbar from './components/layout/Navbar'
+import Dropdown from './components/layout/Dropdown'
+import Landing from './components/layout/Landing'
+
+
+
+const App = () => {
+
+  // Burger menu functions
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const hideMenu = () => {
+      if (window.innerWidth > 768 && isOpen) {
+        setIsOpen(false);
+        console.log('i resized');
+      }
+    };
+
+    window.addEventListener('resize', hideMenu);
+
+    return () => {
+      window.removeEventListener('resize', hideMenu);
+    };
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <>
+      <Navbar toggle={toggle}/>
+      <Dropdown isOpen={isOpen} toggle={toggle} />
+      <Landing />
+
+      <Switch>
+        {/* Route path='/' exact component={Landing}
+            Route path='/search' component={Search}
+            Route path='/schedcule' component={Schedule}
+            Route path='staff_login' component={Staff_login}
+            Route path='help' component={Help}
+        */}
+      </Switch>
+    </>
+  
+  )
 }
 
-export default App;
+export default App
