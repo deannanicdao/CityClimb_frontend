@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const Navbar = ({ toggle }) => {
     return (
       <nav
-      className='flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono'
+      className='flex justify-between items-center h-16 bg-white text-black relative shadow-sm'
       role='navigation'
       >
         <Link to='/' className='pl-8'>
-          LOGO
+          <img src="./icon.png" alt="logo" width="50px" height="50px"></img>
         </Link>
 
       {/* Burger menu */}
