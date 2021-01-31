@@ -36,7 +36,7 @@ const App = () => {
     <>
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Landing />
+      <Landing isOpen={isOpen} toggle={toggle} />
 
       <Switch>
         {/* Route path='/' exact component={Landing}

@@ -12,11 +12,11 @@ const Dropdown = ({ isOpen, toggle }) => {
         onClick={toggle}
         >
             
-        <Link className="p-4" to="/">Home</Link> 
-        <Link className="p-4" to="/">Search Climbs</Link>
-        <Link className="p-4" to="/">Setting Schedule</Link>
-        <Link className="p-4" to="/">Staff Login</Link>
-        <Link className="p-4" to="/">Help</Link> 
+        <Link className="p-6 sm:text-3xl text-xl font-extralight" to="/">Home</Link> 
+        <Link className="p-6 sm:text-3xl text-xl font-extralight" to="/">Search Climbs</Link>
+        <Link className="p-6 sm:text-3xl text-xl font-extralight" to="/">Setting Schedule</Link>
+        <Link className="p-6 sm:text-3xl text-xl font-extralight" to="/">Staff Login</Link>
+        <Link className="p-6 sm:text-3xl text-xl font-extralight" to="/">Help</Link> 
             
         </div>
     )
