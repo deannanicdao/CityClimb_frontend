@@ -35,9 +35,9 @@ export const Navbar = () => {
                 { isAuthenticated ? authLinks : guestLinks }
             </Fragment> */}
             <Fragment>
-                <Link to="/staff-login">Staff Login</Link>
-                <Link to="/staff-register">Staff Register</Link>
-                <Link to="/staff-register">Staff Dashboard</Link>
+                <Link to="/staff-login">Staff Login</Link> &nbsp; - &nbsp;
+                <Link to="/staff-register">Staff Register</Link> &nbsp; - &nbsp;
+                <Link to="/staff-dashboard">Staff Dashboard</Link>
             </Fragment>
         </nav>   
     )

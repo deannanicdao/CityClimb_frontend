@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
 import Register from '../auth/Register'
 import Login from '../auth/Login'
+import StaffDashboard from '../admin/StaffDashboard'
 import NotFound from '../layout/NotFound'
 
 export const Routes = () => {
@@ -10,7 +11,8 @@ export const Routes = () => {
             <Switch>
                 <Route exact path="/staff-register" component={Register} />
                 <Route exact path="/staff-login" component={Login} />
-                <Route component={NotFound} />
+                <Route exact path="/staff-dashboard" component={StaffDashboard} />
+                <Route component={NotFound} /> 
             </Switch>
         </section>
     )
