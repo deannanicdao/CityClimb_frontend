@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,14 +7,38 @@ import {
   } from "react-router-dom"
 
 export const Navbar = () => {
+    const authLinks = (
+        <ul>
+            <li>
+                <Link to="/staff-login">Staff Login</Link>
+            </li>
+            <li>Staff Register</li>
+            <li>Climb Dashboard</li>
+            <li>Staff Dashboard</li>
+            <li>Logout</li>
+        </ul>
+    )
+
+    const guestLinks = (
+        <ul>
+            <li>Search Climbs</li>
+            <li>Setting Schedule</li>
+            <li>Help</li>
+        </ul>
+    )
+
     return (
         <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
             <Link to="/" className="navbar-brand">LOGO</Link> &nbsp; - &nbsp;
             Current Page &nbsp; - &nbsp;
-            <Link to="/" className="nav-link">Search Climbs</Link> &nbsp; - &nbsp;
-            <Link to="/" className="nav-link">Setting Schedule</Link> &nbsp; - &nbsp;
-            <Link to="/" className="nav-link">Staff Login</Link> &nbsp; - &nbsp;
-            <Link to="/" className="nav-link">Help</Link> 
+            {/* <Fragment>
+                { isAuthenticated ? authLinks : guestLinks }
+            </Fragment> */}
+            <Fragment>
+                <Link to="/staff-login">Staff Login</Link>
+                <Link to="/staff-register">Staff Register</Link>
+                <Link to="/staff-register">Staff Dashboard</Link>
+            </Fragment>
         </nav>   
     )
 }
