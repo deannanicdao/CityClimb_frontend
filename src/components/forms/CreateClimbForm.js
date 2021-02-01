@@ -7,19 +7,24 @@ const CreateClimbForm = () => {
     const { register, handleSubmit, errors } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
-        // data.climbImage = {data.}
-        // const formData = new FormData()
-        // formData.append('')
-        // console.log(formData)
-        console.log(JSON.stringify(data))
+        const formData = new FormData()
+
+        formData.append("gym", data.gym)
+        formData.append("wall", data.wall)
+        formData.append("colour", data.colour)
+        formData.append("youtubeUrl", data.youtubeUrl)
+        formData.append("climbImage", data.climbImage[0])
+
+
+        console.log(formData)
+
 
         fetch('http://localhost:8000/climbs', {
             method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
-            }
+            body: formData,
+            // headers: {
+            //     "Content-Type": "multipart/form-data"
+            // }
         })
     }
 
@@ -30,7 +35,7 @@ const CreateClimbForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="text-gray-700">
+            <label className="text-gray-700">
                     Gym
               {/* <span className="text-red-500 required-dot">*</span> */}
                     <select name="gym" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
@@ -67,13 +72,8 @@ const CreateClimbForm = () => {
                 <br></br>
                 <br></br>
                 {/* https://tailwindcomponents.com/component/tailwind-file-upload */}
-                {/* <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue-400 rounded-lg shadow-lg tracking-wide uppercase border border-blue-600 cursor-pointer hover:bg-blue-400 hover:text-white">
-                    <svg className="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                    </svg>
-                    <span className="mt-2 text-base leading-normal">Select image</span>
-                    <input ref={register} type="file" name="image" className="hidden" />
-                </label> */}
+               
+                    <input ref={register} type="file" name="climbImage" />
 
                 <br></br>
 
