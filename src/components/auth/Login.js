@@ -32,8 +32,8 @@ const Login = () => {
 
             const body = JSON.stringify(loggedInUser)
 
-            const res = await axios.get('/users', body, config)
-            console.log(res.data)
+            // const res = await axios.get('/users', body, config)
+            // console.log(res.data)
         } catch (err) {
             console.error(err.message)
         }
