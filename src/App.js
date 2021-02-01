@@ -36,8 +36,8 @@ const App = () => {
     <>
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Landing />
-      {/* <CreateClimbForm /> */}
+      {/* <Landing /> */}
+      <CreateClimbForm />
       <Switch>
         {/* Route path='/' exact component={Landing}
             Route path='/search' component={Search}
