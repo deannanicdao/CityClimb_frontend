@@ -1,19 +1,15 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect, Fragment } from 'react'
-import { Switch, Route } from 'react-router-dom'
-=======
-import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
->>>>>>> User
+
 
 import Navbar from './components/layout/Navbar'
 import Dropdown from './components/layout/Dropdown'
 import Landing from './components/layout/Landing'
-<<<<<<< HEAD
+
 import CreateClimbForm  from './components/forms/CreateClimbForm.js'
-=======
 import Routes from './components/routing/Routes'
->>>>>>> User
+
 
 
 const App = () => {
@@ -41,14 +37,12 @@ const App = () => {
   });
 
   return (
-<<<<<<< HEAD
 
     <>
       <Navbar toggle={toggle}/>
-   
+
   
       <Landing />
-
       <Switch>
         {/* Route path='/' exact component={Landing}
             Route path='/search' component={Search}
@@ -59,17 +53,6 @@ const App = () => {
       </Switch>
     </>
   
-=======
-  <Router>
-    <Fragment>
-      <Navbar />
-      <Switch>
-        <Route exact path= "/" component={Landing} />
-        <Route component={Routes} />
-      </Switch>
-    </Fragment>
-  </Router>
->>>>>>> User
   )
 }
 
