@@ -17,11 +17,11 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md" fixed="right" className="text-right">
+      <Navbar style={{justify_content: "flex-end"}} color="light" light expand="md" className="text-right">
         <NavbarBrand href="/"><img src="./icon.png" alt="logo" width="50px" height="50px"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+        <Collapse isOpen={isOpen} navbar >
+          <Nav navbar >
             <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>

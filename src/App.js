@@ -1,52 +1,51 @@
 
 import React, { useState, useEffect, Fragment } from 'react'
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-
+import { Switch, Route } from "react-router-dom";
 
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
+import Search from './components/layout/Search'
+import Schedule from './components/layout/Schedule'
+import Login from './components/layout/Login'
+import Help from './components/layout/Help'
 
 import CreateClimbForm  from './components/forms/CreateClimbForm.js'
 
 
 const App = () => {
 
-  // Burger menu functions
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  useEffect(() => {
-    const hideMenu = () => {
-      if (window.innerWidth > 768 && isOpen) {
-        setIsOpen(false);
-        console.log('i resized');
-      }
-    };
-
-    window.addEventListener('resize', hideMenu);
-
-    return () => {
-      window.removeEventListener('resize', hideMenu);
-    };
-  });
-
   return (
 
     <>
-      <Navbar toggle={toggle}/>
+      <Navbar />
 
-  
-      <Landing />
       <Switch>
-        {/* Route path='/' exact component={Landing}
+
+        <Route path='/'>
+          <Landing />
+        </Route> 
+
+        <Route path='/search'>
+          <Search />
+        </Route> 
+
+        <Route path='/schedule'>
+          <Schedule />
+        </Route> 
+
+        <Route path='/login'>
+          <Login />
+        </Route> 
+
+        <Route path='/help'>
+          <Help />
+        </Route> 
+
+        {/* exact component={Landing}
             Route path='/search' component={Search}
             Route path='/schedcule' component={Schedule}
             Route path='staff_login' component={Staff_login}
-            Route path='help' component={Help}
-        */}
+            Route path='help' component={Help} */}
       </Switch>
     </>
   
