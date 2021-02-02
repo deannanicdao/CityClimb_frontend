@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Dropdown from './components/layout/Dropdown'
 import Landing from './components/layout/Landing'
-
+import CreateClimbForm  from './components/forms/CreateClimbForm.js'
 
 
 const App = () => {
@@ -38,6 +38,8 @@ const App = () => {
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Landing isOpen={isOpen} toggle={toggle} />
 
+      <Landing />
+      {/* <CreateClimbForm /> */}
       <Switch>
         {/* Route path='/' exact component={Landing}
             Route path='/search' component={Search}
