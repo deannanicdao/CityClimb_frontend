@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, Fragment } from 'react'
+import React from 'react'
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from './components/layout/Navbar'
@@ -9,45 +9,43 @@ import Schedule from './components/layout/Schedule'
 import Login from './components/layout/Login'
 import Help from './components/layout/Help'
 
-import CreateClimbForm  from './components/forms/CreateClimbForm.js'
+// import CreateClimbForm  from './components/forms/CreateClimbForm.js'
 
 
 const App = () => {
 
   return (
 
-    <>
+    <div>
       <Navbar />
 
+      {/* Can move this Switch into its own 
+      commitment to tidy things up  */}
       <Switch>
 
-        <Route path='/'>
-          <Landing />
-        </Route> 
-
-        <Route path='/search'>
-          <Search />
-        </Route> 
-
-        <Route path='/schedule'>
-          <Schedule />
-        </Route> 
-
-        <Route path='/login'>
-          <Login />
-        </Route> 
-
-        <Route path='/help'>
+        <Route path="/help">
           <Help />
-        </Route> 
+        </Route>
+        
+        <Route path="/login">
+          <Login />
+        </Route>
 
-        {/* exact component={Landing}
-            Route path='/search' component={Search}
-            Route path='/schedcule' component={Schedule}
-            Route path='staff_login' component={Staff_login}
-            Route path='help' component={Help} */}
+        <Route path="/schedule">
+          <Schedule />
+        </Route>
+
+        <Route path="/search">
+          <Search />
+        </Route>
+
+        <Route path="/">
+          <Landing />
+        </Route>
+
       </Switch>
-    </>
+
+    </div>
   
   )
 }
