@@ -4,12 +4,9 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 import Navbar from './components/layout/Navbar'
-import Dropdown from './components/layout/Dropdown'
 import Landing from './components/layout/Landing'
 
 import CreateClimbForm  from './components/forms/CreateClimbForm.js'
-import Routes from './components/routing/Routes'
-
 
 
 const App = () => {
