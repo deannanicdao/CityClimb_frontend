@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 const Navbar = ({ toggle }) => {
     return (
       <nav
-      className='flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono'
+      className='flex justify-between items-center h-16 bg-white text-black relative shadow-sm'
       role='navigation'
       >
         <Link to='/' className='pl-8'>
-          LOGO
+          <img src="./icon.png" alt="logo" width="50px" height="50px"></img>
         </Link>
 
       {/* Burger menu */}
-      <div className='px-4 cursor-pointer md:hidden' onClick={toggle}>
+      <div className='px-4 cursor-pointer lg:hidden' onClick={toggle}>
         <svg
           className='w-8 h-8'
           fill='none'
@@ -28,7 +28,7 @@ const Navbar = ({ toggle }) => {
           />
         </svg>
       </div>
-        <div className="pr-8 md:block hidden"> 
+        <div className="pr-8 lg:block hidden"> 
           <Link className="p-4" to="/">Home</Link>
           <Link className="p-4" to="/">Search Climbs</Link>
           <Link className="p-4" to="/">Setting Schedule</Link>
