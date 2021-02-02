@@ -9,7 +9,7 @@ import Schedule from './components/layout/Schedule'
 import Login from './components/layout/Login'
 import Help from './components/layout/Help'
 
-// import CreateClimbForm  from './components/forms/CreateClimbForm.js'
+import CreateClimbForm  from './components/forms/CreateClimbForm.js'
 
 
 const App = () => {
@@ -25,6 +25,10 @@ const App = () => {
 
         <Route path="/help">
           <Help />
+        </Route>
+
+        <Route path="/create_climb">
+          <CreateClimbForm />
         </Route>
         
         <Route path="/login">

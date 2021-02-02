@@ -15,9 +15,7 @@ const CreateClimbForm = () => {
         formData.append("youtubeUrl", data.youtubeUrl)
         formData.append("image", data.image[0])
 
-
         console.log(formData)
-
 
         fetch('http://localhost:8000/climbs', {
             method: 'POST',

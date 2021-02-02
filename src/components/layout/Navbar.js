@@ -23,21 +23,33 @@ const Example = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar >
           <Nav navbar >
+
             <NavItem>
               <NavLink> <Link to="/"> Home </Link> </NavLink>
             </NavItem>
+
             <NavItem>
               <NavLink> <Link to="/search"> Search </Link> </NavLink>
             </NavItem>
+
             <NavItem>
               <NavLink> <Link to="/schedule"> Schedule </Link> </NavLink>
             </NavItem>
+
+            {/* Only visible when logged in as staff */}
             <NavItem>
-              <NavLink> <Link to="/login"> Login </Link> </NavLink>
+              <NavLink> <Link to="/create_climb"> Create Climb </Link> </NavLink>
             </NavItem>
+
+            {/* Only visible when no staff logged in */}
             <NavItem>
-              <NavLink> <Link to="/search"> Search </Link> </NavLink>
+              <NavLink> <Link to="/login"> Staff Login </Link> </NavLink>
             </NavItem>
+
+            <NavItem>
+              <NavLink> <Link to="/help"> Help </Link> </NavLink>
+            </NavItem>
+            
           </Nav>
         </Collapse>
       </Navbar>
