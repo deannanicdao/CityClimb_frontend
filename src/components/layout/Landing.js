@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Landing = () => {
+const Landing = ({ isOpen }) => {
     return (
 
-
-        <div className="bg-gray-200
-        h-screen flex flex-col justify-center items-center" >
+        <div className={
+            isOpen
+                ? 'bg-gray-500 h-screen flex flex-col justify-center items-center'
+                : "bg-gray-200 h-screen flex flex-col justify-center items-center" 
+        } 
+        
+        >
 
             <h1 className="2xl:text-9xl xl:text-8xl lg:text-7xl md:text-6xl sm:text-5xl text-3xl 
             font-black tracking-wider mb-2">CITY CLIMB</h1>
