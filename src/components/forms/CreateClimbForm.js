@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 
 const CreateClimbForm = () => {
@@ -13,7 +13,7 @@ const CreateClimbForm = () => {
         formData.append("wall", data.wall)
         formData.append("colour", data.colour)
         formData.append("youtubeUrl", data.youtubeUrl)
-        formData.append("climbImage", data.climbImage[0])
+        formData.append("image", data.image[0])
 
 
         console.log(formData)
@@ -73,7 +73,7 @@ const CreateClimbForm = () => {
                 <br></br>
                 {/* https://tailwindcomponents.com/component/tailwind-file-upload */}
                
-                    <input ref={register} type="file" name="climbImage" />
+                    <input ref={register} type="file" name="image" />
 
                 <br></br>
 
