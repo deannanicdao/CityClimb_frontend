@@ -1,15 +1,31 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { applyMiddleware } from 'redux'
-import { decodedTextSpanIntersectsWith } from 'typescript'
+
 
 const CreateClimbForm = () => {
 
     const { register, handleSubmit, errors } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
-        
+        const formData = new FormData()
+
+        formData.append("gym", data.gym)
+        formData.append("wall", data.wall)
+        formData.append("colour", data.colour)
+        formData.append("youtubeUrl", data.youtubeUrl)
+        formData.append("image", data.image[0])
+
+
+        console.log(formData)
+
+
+        fetch('http://localhost:8000/climbs', {
+            method: 'POST',
+            body: formData,
+            // headers: {
+            //     "Content-Type": "multipart/form-data"
+            // }
+        })
     }
 
     console.log(errors)
@@ -19,10 +35,10 @@ const CreateClimbForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="text-gray-700">
+            <label className="text-gray-700">
                     Gym
               {/* <span className="text-red-500 required-dot">*</span> */}
-                    <select name="Gym" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    <select name="gym" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                         <option value="Milton">Milton</option>
                         <option value="Newstead">Newstead</option>
                         <option value="West End">West End</option>
@@ -30,7 +46,7 @@ const CreateClimbForm = () => {
                 </label>
                 <label className="text-gray-700">
                     Wall
-      <select name="Wall" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+      <select name="wall" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                         <option value="Dungeon">Dungeon</option>
                         <option value="Zepellin">Zepellin</option>
                         <option value="Cave">Cave</option>
@@ -38,7 +54,7 @@ const CreateClimbForm = () => {
                 </label>
                 <label className="text-gray-700">
                     Colour
-      <select name="Colour" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+      <select name="colour" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                         <option value="black">black</option>
                         <option value="blue">blue</option>
                         <option value="green">green</option>
@@ -51,18 +67,13 @@ const CreateClimbForm = () => {
                 </label>
                 <br></br>
 
-                <input type="url" placeholder="Youtube URL" name="Youtube URL" ref={register({ required: true, pattern: youtubeRegex })} className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-1/6 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+                <input type="url" placeholder="Youtube URL" name="youtubeUrl" ref={register({ required: true, pattern: youtubeRegex })} className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-1/6 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
 
                 <br></br>
                 <br></br>
                 {/* https://tailwindcomponents.com/component/tailwind-file-upload */}
-                <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue-400 rounded-lg shadow-lg tracking-wide uppercase border border-blue-600 cursor-pointer hover:bg-blue-400 hover:text-white">
-                    <svg className="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                    </svg>
-                    <span className="mt-2 text-base leading-normal">Select image</span>
-                    <input ref={register} type="file" name="climbImage" className="hidden" />
-                </label>
+               
+                    <input ref={register} type="file" name="image" />
 
                 <br></br>
 
