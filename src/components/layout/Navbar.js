@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-import React, { Fragment } from 'react'
+import React, { useState, Fragment } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom"
-=======
-import React, { useState } from 'react';
-import { Link } from "react-router-dom"
 import {
   Collapse,
   Navbar,
@@ -44,7 +40,10 @@ const Example = (props) => {
             <NavItem>
               <NavLink> <Link to="/schedule"> Schedule </Link> </NavLink>
             </NavItem>
->>>>>>> 185adc50a99f2dfd0663e63a51f05c3313b90edf
+
+            <NavItem>
+              <NavLink> <Link to="/help"> Help </Link> </NavLink>
+            </NavItem>
 
             {/* Only visible when logged in as staff */}
             <NavItem>
@@ -53,35 +52,20 @@ const Example = (props) => {
 
             {/* Only visible when no staff logged in */}
             <NavItem>
-              <NavLink> <Link to="/login"> Staff Login </Link> </NavLink>
+              <NavLink> <Link to="/staff_login"> Staff Login </Link> </NavLink>
             </NavItem>
 
-<<<<<<< HEAD
-    return (
-        <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-            <Link to="/" className="navbar-brand">LOGO</Link> &nbsp; - &nbsp;
-            Current Page &nbsp; - &nbsp;
-            {/* <Fragment>
-                { isAuthenticated ? authLinks : guestLinks }
-            </Fragment> */}
-            <Fragment>
-                <Link to="/staff-login">Staff Login</Link> &nbsp; - &nbsp;
-                <Link to="/staff-register">Staff Register</Link> &nbsp; - &nbsp;
-                <Link to="/staff-dashboard">Staff Dashboard</Link>
-            </Fragment>
-        </nav>   
-    )
-=======
             <NavItem>
-              <NavLink> <Link to="/help"> Help </Link> </NavLink>
+              <NavLink> <Link to="/staff_register"> Staff Register </Link> </NavLink>
             </NavItem>
-            
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
->>>>>>> 185adc50a99f2dfd0663e63a51f05c3313b90edf
-}
 
+            <NavItem>
+              <NavLink> <Link to="/staff_dashboard"> Staff Dashboard </Link> </NavLink>
+            </NavItem>
+            </Nav>
+            </Collapse>
+          </Navbar>
+    </div>
+  )
+}
 export default Example;
