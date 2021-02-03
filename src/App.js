@@ -39,18 +39,13 @@ const App = () => {
   return (
 
     <>
-      <Navbar toggle={toggle}/>
-
-  
-      <Landing />
-      <Switch>
-        {/* Route path='/' exact component={Landing}
-            Route path='/search' component={Search}
-            Route path='/schedcule' component={Schedule}
-            Route path='staff_login' component={Staff_login}
-            Route path='help' component={Help}
-        */}
-      </Switch>
+      <Router>
+        <Navbar toggle={toggle}/>
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route component={Routes} />
+            </Switch>
+      </Router>
     </>
   
   )
