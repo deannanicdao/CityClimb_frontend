@@ -6,6 +6,7 @@ import Search from './../layout/Search'
 import Schedule from './../layout/Schedule'
 import StaffDashboard from './../admin/StaffDashboard'
 import CreateClimbForm from './../climbs/CreateClimbForm'
+import Climbs from './../climbs/Climbs'
 import Help from './../layout/Help'
 import NotFound from '../layout/NotFound'
 
@@ -19,6 +20,7 @@ export const Routes = () => {
                 <Route exact path="/schedule" component={Schedule} />
                 <Route exact path="/staff_dashboard" component={StaffDashboard} />
                 <Route exact path="/create_climb" component={CreateClimbForm} />
+                <Route exact path="/climbs" component={Climbs} />
                 <Route exact path="/help" component={Help} />
                 <Route component={NotFound} /> 
             </Switch>
