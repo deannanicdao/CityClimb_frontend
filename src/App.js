@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
 import Search from './components/layout/Search'
 import Schedule from './components/layout/Schedule'
-import Login from './components/layout/Login'
+import Login from './components/auth/Login'
 import Help from './components/layout/Help'
 
 import CreateClimbForm  from './components/forms/CreateClimbForm.js'
