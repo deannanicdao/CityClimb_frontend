@@ -8,6 +8,7 @@ import StaffDashboard from './../admin/StaffDashboard'
 import CreateClimbForm from './../climbs/CreateClimbForm'
 import Help from './../layout/Help'
 import NotFound from '../layout/NotFound'
+import Climb from '../layout/Climb'
 
 export const Routes = () => {
     return (
@@ -20,6 +21,7 @@ export const Routes = () => {
                 <Route exact path="/staff_dashboard" component={StaffDashboard} />
                 <Route exact path="/create_climb" component={CreateClimbForm} />
                 <Route exact path="/help" component={Help} />
+                <Route exact path="/climb_template" component={Climb} />
                 <Route component={NotFound} /> 
             </Switch>
         </section>
