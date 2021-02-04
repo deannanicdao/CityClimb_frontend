@@ -1,30 +1,27 @@
 import React, { Fragment }  from 'react'
 import { useForm } from "react-hook-form"
+import GymView from './GymView'
 
 const Search = () => {
-    const { register, watch, errors, handleSubmit } = useForm()
+    const { register, watch } = useForm()
 
-    const watchShowGyms = watch("showGyms", true)
-    // const watchShowGreen = watch("green", false)
-    // const watchShowBlue = watch("blue", false)
-    // const watchShowRed = watch("red", false)
+    const selectedGym = watch("gym", false)
 
-    const onSubmit = data => console.log(data);
     
-
 
     return (
         <Fragment>
-            <p className='large'>Search</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="checkbox" name="showGyms" ref={register} hidden />
-                {watchShowGyms && <div>
-                <input type="submit" className="btn btn-primary" value="Milton" name="milton"   ref={register}/>
-                <input type="submit" className="btn btn-primary" value="Newstead" name="newstead"   ref={register}/>
-                <input type="submit" className="btn btn-primary" value="West End" name="westend"    ref={register}/>
-                </div>
-            }
+            <p className='large'>Select Gym</p>
+            <form>
+                <input type="radio" name="gym" value="milton" ref={register}/>Milton
+                <input type="radio" name="gym" value="newstead" ref={register}/>Newstead
+                <input type="radio" name="gym" value="westend" ref={register}/>West End
             </form>
+
+            {selectedGym == "milton" && <GymView gym={"milton"}/>}
+            {selectedGym == "newstead" && <GymView gym={"newstead"}/>}
+            {selectedGym == "westend" && <GymView gym={"westend"}/>}
+
         </Fragment>
     )
 }

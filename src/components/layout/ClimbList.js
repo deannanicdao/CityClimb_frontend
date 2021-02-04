@@ -8,7 +8,7 @@ import Climb from '../climbs/Climb'
 const ClimbList = (props) => {
 
     const API_ENDPOINT = "http://localhost:8000"
-    const { gym, colour } = props.match.params
+    const { gym, colour } = props
 
     // console.log(props)
 
@@ -38,10 +38,8 @@ const ClimbList = (props) => {
     
     return (
         <>
-            Hello
+            {colour.toUpperCase()}
             <br />
-
-
             <Row gutter={40}>
                 {(climbs).map(climb => 
 
@@ -51,7 +49,7 @@ const ClimbList = (props) => {
                     >
 
                         <Climb climb={climb} />
-                    
+
                     <br />
                     </Col>
                 )}
