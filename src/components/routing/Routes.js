@@ -12,6 +12,7 @@ import ClimbList from './../layout/ClimbList'
 import Climb from './../climbs/Climb'
 import SingleClimb from './../layout/SingleClimb'
 
+
 export const Routes = () => {
     return (
         <section className="container">
@@ -26,6 +27,7 @@ export const Routes = () => {
                 <Route exact path="/climbs/:gym/:colour" render={(props) => <ClimbList {...props} />} />
                 <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
                 <Route exact path="/help" component={Help} />
+                <Route exact path="/climb_template" component={Climb} />
                 <Route component={NotFound} /> 
             </Switch>
         </section>
