@@ -2,6 +2,7 @@ import React, { Fragment }  from 'react'
 import { useForm } from "react-hook-form"
 
 const Search = () => {
+
     const { register, watch, errors, handleSubmit } = useForm()
 
     const watchShowGyms = watch("showGyms", false)
@@ -10,8 +11,6 @@ const Search = () => {
     // const watchShowRed = watch("red", false)
 
     const onSubmit = data => console.log(data);
-
-
 
     return (
         <Fragment>
