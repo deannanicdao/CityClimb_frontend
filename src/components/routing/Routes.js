@@ -8,7 +8,10 @@ import StaffDashboard from './../admin/StaffDashboard'
 import CreateClimbForm from './../climbs/CreateClimbForm'
 import Help from './../layout/Help'
 import NotFound from '../layout/NotFound'
-import Climb from '../layout/Climb'
+import ClimbList from './../layout/ClimbList'
+import Climb from './../climbs/Climb'
+import SingleClimb from './../layout/SingleClimb'
+
 
 export const Routes = () => {
     return (
@@ -20,6 +23,9 @@ export const Routes = () => {
                 <Route exact path="/schedule" component={Schedule} />
                 <Route exact path="/staff_dashboard" component={StaffDashboard} />
                 <Route exact path="/create_climb" component={CreateClimbForm} />
+                {/* <Route path="/climbs/:gym/:colour" component={ClimbList} /> */}
+                <Route exact path="/climbs/:gym/:colour" render={(props) => <ClimbList {...props} />} />
+                <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
                 <Route exact path="/help" component={Help} />
                 <Route exact path="/climb_template" component={Climb} />
                 <Route component={NotFound} /> 
@@ -29,3 +35,7 @@ export const Routes = () => {
 }
 
 export default Routes
+
+//             <Route exact path="/jobs/:id" render={(props) => <EditJobPage {...props} loggedInUser={loggedInUser}/>} />
+//           <Route exact path="/gallery" render={() => <GalleryPage />} />
+//           <Route exact path="/about" render={() => <AboutPage />} />
