@@ -9,6 +9,8 @@ import CreateClimbForm from './../climbs/CreateClimbForm'
 import Help from './../layout/Help'
 import NotFound from '../layout/NotFound'
 import ClimbList from './../layout/ClimbList'
+import Climb from './../climbs/Climb'
+import SingleClimb from './../layout/SingleClimb'
 
 export const Routes = () => {
     return (
@@ -22,6 +24,7 @@ export const Routes = () => {
                 <Route exact path="/create_climb" component={CreateClimbForm} />
                 {/* <Route path="/climbs/:gym/:colour" component={ClimbList} /> */}
                 <Route exact path="/climbs/:gym/:colour" render={(props) => <ClimbList {...props} />} />
+                <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
                 <Route exact path="/help" component={Help} />
                 <Route component={NotFound} /> 
             </Switch>

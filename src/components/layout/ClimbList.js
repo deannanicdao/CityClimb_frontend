@@ -49,9 +49,9 @@ const ClimbList = (props) => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <Link to={`/climbs/${gym}/${colour}/${climb._id}`}>
+
                         <Climb climb={climb} />
-                        </Link>
+                    
                     <br />
                     </Col>
                 )}
