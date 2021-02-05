@@ -12,16 +12,13 @@ const Register = () => {
         console.log(data)
 
         const formData = new FormData()
-
         const name = `${data.firstName} ${data.lastName}`
-        
+
         formData.append("name", name)
         formData.append("email", data.email)
         formData.append("staffNumber", data.staffNumber)
         formData.append("password", data.password)
-        formData.append("confirmPassword", data.confirmPassword)
         formData.append("image", data.image[0])
-
 
         console.log(formData)
 
@@ -66,7 +63,6 @@ const Register = () => {
                         }
                         })}
                     />
-                    {console.log("hi")}
                 </div>
                 {errors.password && <p>{errors.password.message}</p>}
                 <div className='form-group'>
@@ -79,13 +75,13 @@ const Register = () => {
                         name="confirmPassword"
                         type="password"
                         placeholder="Confirm password"
-                        ref={register({
-                        validate: value =>
-                            value === password.current || "The passwords do not match"
-                        })}
-                        />
-                        {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+                        // ref={register({
+                        // validate: value =>
+                        //     value === password.current || "The passwords do not match"
+                        // })}
+                    />
                 </div>
+                {/* {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>} */}
 
                 <input ref={register} type="file" name="image" />
 
