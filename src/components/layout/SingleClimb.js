@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Climb from '../climbs/Climb'
+import Climb from './Climb'
+// 
 
 const SingleClimb = (props) => {
 
