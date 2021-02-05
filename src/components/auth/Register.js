@@ -5,17 +5,23 @@ import { useForm } from 'react-hook-form'
 const Register = () => {
     const { register, handleSubmit, errors, watch } = useForm()
     const password = useRef({})
+    password.current = watch("password", "")
     
     const onSubmit = (data) => {
-        const formData = new FormData()
-        password.current = watch("password", "")
 
-        formData.append("name", data.name)
+        console.log(data)
+
+        const formData = new FormData()
+
+        const name = `${data.firstName} ${data.lastName}`
+        
+        formData.append("name", name)
         formData.append("email", data.email)
         formData.append("staffNumber", data.staffNumber)
         formData.append("password", data.password)
         formData.append("confirmPassword", data.confirmPassword)
         formData.append("image", data.image[0])
+
 
         console.log(formData)
 
@@ -60,6 +66,7 @@ const Register = () => {
                         }
                         })}
                     />
+                    {console.log("hi")}
                 </div>
                 {errors.password && <p>{errors.password.message}</p>}
                 <div className='form-group'>
@@ -76,11 +83,11 @@ const Register = () => {
                         validate: value =>
                             value === password.current || "The passwords do not match"
                         })}
-                    />
+                        />
+                        {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
                 </div>
-                {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
 
-                <input ref={register({ required: true })} type="file" name="image" />
+                <input ref={register} type="file" name="image" />
 
                 <input type="submit" className="btn btn-primary" value="Register"/>
             </form>
