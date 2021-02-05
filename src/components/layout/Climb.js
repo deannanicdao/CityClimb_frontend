@@ -5,16 +5,6 @@ import {
 
 const Climb = () => {
 
-    let dummyClimb = {
-        "name": "The Demigorgon",
-        "colour": "Red",
-        "location": "West End",
-        "setter": "Brad Pitt",
-        "date": "12/01/2021",
-        "description": "Known as the Prince of Demons, a self-proclaimed title, but one that is acknowledged by mortals and even his fellow demons because of his power and influence.",
-        "video": "tgbNymZ7vqY"
-    }
-
     return (
         <div  className="climbs">
         <br />

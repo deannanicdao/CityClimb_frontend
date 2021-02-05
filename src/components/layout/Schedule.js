@@ -10,13 +10,6 @@ const Schedule = () => {
 
     const [climbs, setClimbs] = useState([])
 
-    // const fetchClimbs = () => {
-    //     fetch("http://localhost:8000/climbs/")
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    //     .catch(e => console.log(e))
-    // }
-
     useEffect(() => {
         // let isMounted = true
         // fetchClimbs()
@@ -33,18 +26,6 @@ const Schedule = () => {
             // return () => { isMounted = false }
         }
     }, [])
-    
-
-    let climbList = [
-        { "name": "Dungeon", "colour": "Red", "image": "https://imgur.com/RTFOOHR" },
-        { "name": "Zeplin", "colour": "Blue", "image": "https://imgur.com/yln0oYC" },
-        { "name": "Death Valley", "colour": "Green", "image": "https://imgur.com/ZHKnVr8" },
-        { "name": "Reningar's Revenge", "colour": "Purple", "image": "https://imgur.com/Hrzbo49" },
-        { "name": "In the Begins", "colour": "Black", "image": "https://imgur.com/Ld5Ux3g" },
-        { "name": "Christmas Special", "colour": "ReGreen", "image": "https://imgur.com/rg7RAdm" },
-        { "name": "Climb or Die", "colour": "Rainbow", "image": "https://imgur.com/aj9vfmu" },
-        { "name": "Pleasures Peak", "colour": "Yellow", "image": "https://imgur.com/hTkpXvw" }
-      ]
 
     return (
         <>
@@ -64,12 +45,14 @@ const Schedule = () => {
                     <Card> 
                         <CardImg top width="100%" src={"http://res.cloudinary.com/coderacademy/image/upload"+climb.image} alt="Card image cap" />
                         <CardBody>
-                        <CardTitle tag="h5">{climb.name}</CardTitle>
+                        <CardTitle tag="h5">{climb.wall}</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">{climb.colour}</CardSubtitle>
-                        <CardText>{climb._id}</CardText>
-                        <Button>Button</Button>
+                        <CardText>{climb.gym}</CardText>
+                        <Button> View Climb </Button>
+                           
                         </CardBody>
                     </Card>
+                    
                     <br />
                     </Col>
                 )}
