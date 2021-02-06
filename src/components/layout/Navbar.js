@@ -30,6 +30,8 @@ const Navbar = () => {
     }
   };
 
+  // Hides Login buttons from the menu bar
+  // when burger menu is visible
   useEffect(() => {
     showButton();
   }, []);
@@ -40,8 +42,8 @@ const Navbar = () => {
     < >
       {/* Enitre navbar */}
       <nav className='navbar'>
-        <div className='navbar-container'>
 
+        <div className='navbar-container'>
             {/* Logo */}
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
               <img src='./icon.png' alt='logo' width='50px' height='50px'></img>
