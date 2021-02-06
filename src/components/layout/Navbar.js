@@ -34,7 +34,7 @@ const Example = (props) => {
             </NavItem>
 
             <NavItem>
-              <NavLink> <Link to="/search"> Search </Link> </NavLink>
+              <NavLink> <Link to="/climbs"> Climbs </Link> </NavLink>
             </NavItem>
 
             <NavItem>

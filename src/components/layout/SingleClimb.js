@@ -59,12 +59,6 @@ const SingleClimb = (props) => {
 
         </div>
 
-
-        // <> 
-        // hello single climb 
-        // {console.log(climb)} 
-        // <Climb climb={climb} />
-        // </>
       );
 
 } 
