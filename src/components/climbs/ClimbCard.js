@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 
 const Climb = (props) => {
-    console.log(props)
+    // console.log(props)
 
     let { _id, wall, colour, image, gym } = props.climb
 

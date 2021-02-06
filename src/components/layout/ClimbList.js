@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import Climb from '../climbs/ClimbCard'
+import ClimbCard from '../climbs/ClimbCard'
 
 
 const ClimbList = (props) => {
@@ -48,7 +48,7 @@ const ClimbList = (props) => {
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
 
-                        <Climb climb={climb} />
+                        <ClimbCard climb={climb} />
 
                     <br />
                     </Col>
