@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -6,7 +6,9 @@ import {
     Link
   } from "react-router-dom"
 
-import { Button } from './Button'
+import { Button } from './Button.js'
+
+import './Navbar.css'
 
 
 const Example = (props) => {
@@ -111,7 +113,7 @@ const Example = (props) => {
 
             </ul> 
 
-            {button && <Button buttonStle='btn--outline'>Sign Up</Button>}
+            {/* {button && <Button buttonStle='btn--outline'>Sign Up</Button>} */}
 
         </div>
       </nav>
