@@ -10,7 +10,7 @@ const SIZES = ['btn--medium', 'btn--large']
 // logic to check if button has specified style/size, 
 // if it does logic uses specified style/size
 // if it does not logic sets default from STYLES/SIZES arrays
-const Button = ({
+export const Button = ({
     children,
     type,
     onClick,
