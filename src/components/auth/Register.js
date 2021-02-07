@@ -25,9 +25,9 @@ const Register = () => {
         fetch('http://localhost:8000/users', {
             method: 'POST',
             body: formData,
-            // headers: {
-
-            // }
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
         })
     }
     
