@@ -31,7 +31,8 @@ const CreateClimbForm = () => {
     const youtubeRegex = /(?:https?:\/\/)?(?:(?:(?:www\.?)?youtube\.com(?:\/(?:(?:watch\?.*?(v=[^&\s]+).*)|(?:v(\/.*))|(channel\/.+)|(?:user\/(.+))|(?:results\?(search_query=.+))))?)|(?:youtu\.be(\/.*)?))/
 
     return (
-        <div>
+        <div className='hero-container'>
+            <h1>Test</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
             <label className="text-gray-700">
                     Gym

@@ -28,7 +28,8 @@ const Schedule = () => {
     }, [])
 
     return (
-        <>
+        
+        <div className='container'>
 
             <br />
 
@@ -57,8 +58,8 @@ const Schedule = () => {
                     </Col>
                 )}
             </Row>
-
-        </>
+       </div>
+        
       );
     };
 
