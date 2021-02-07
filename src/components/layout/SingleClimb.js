@@ -1,71 +1,69 @@
 import React, { useState, useEffect } from 'react'
+import ReadableDate from './ReadableDate'
 import {
     Jumbotron
-} from 'reactstrap';
+} from 'reactstrap'
+import { useHistory } from "react-router-dom"
 
-// import Climb from '../climbs/Climb'
 
+// The end point of the flow for the user wanting to look at a climb 
+// This component is where the user is directed with the climb's QR code 
 const SingleClimb = (props) => {
 
-    // Look into memoization 
+    let history = useHistory()
+
+    // TODO: Look into memoization 
     // If a climb is being passed as a prop we dont need to fetch
     const API_ENDPOINT = "http://localhost:8000"
     const { gym, colour, climbId } = props.match.params
 
-    console.log(props)
+    console.log("inside single climb")
 
     const url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${climbId}`
-
-    console.log(url)
 
     const [climb, setClimb] = useState([])
 
     useEffect(() => {
-        console.log("Mounted")
+        console.log("Single Climb Mounted")
 
         fetch(url)
         .then(res => res.json())
         .then(data => { 
-            // console.log(data)
-
             setClimb(data)
+            console.log(data)
         })
-        .catch(e => console.log(e))
+        .catch(e => history.push('/'))
+
+
        
         return () => {
-            console.log("Unmounted")
+            // console.log("Unmounted")
         }
     }, [])
     
     return (
+        <>
         <div  className="climbs">
         <br />
             <Jumbotron>
-                <div class="yt-container">
-                    <iframe class="responsive-iframe" src={"https://www.youtube.com/embed/"+climb.video}>   </iframe>
+                <div className="yt-container">
+                    <iframe class="responsive-iframe" src={`https://www.youtube.com/embed/${climb.video}`}>   </iframe>
                 </div>
 
                     <h1 className="display-3">{climb.wall}</h1>
                     <p className="lead">Colour: {climb.colour} </p>
                     <p className="lead">Location: {climb.gym} </p>
-                    {/* <p className="lead">Setter: {dummyClimb.setter} </p> */}
-                    <p className="lead">Date Set: {climb.createdAt} </p>
+                    <p className="lead">Date Set: <ReadableDate date={climb.createdAt}/> </p>
                     <hr className="my-2" />
-                    <p>Description maybe baybe?</p>
                     <p className="lead">
         
                     </p>
              </Jumbotron>
 
         </div>
+        </>
 
-
-        // <> 
-        // hello single climb 
-        // {console.log(climb)} 
-        // <Climb climb={climb} />
-        // </>
-      );
+      )
 
 } 
 
