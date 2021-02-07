@@ -69,8 +69,10 @@ const Example = (props) => {
 
             </Nav>
             </Collapse>
+            
           </Navbar>
     </div>
   )
 }
+
 export default Example;
