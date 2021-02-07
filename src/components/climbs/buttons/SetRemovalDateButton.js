@@ -12,7 +12,7 @@ const SetRemovalDateButton = ( {climb} ) => {
     // Corresponds to addRemovalDate in API's climb_controller.js file 
     fetch(`${url}`, {
         method: 'PATCH'
-    }).then(res => res.json()).then((results) => console.log(results))
+    }).then(res => res.json()).then((results) => {(alert(`Climb will be automatically deleted on: ${new Date(results.removalDate).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric'})}`))})
   }
 
   return (

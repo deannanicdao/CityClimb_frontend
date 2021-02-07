@@ -1,7 +1,8 @@
 import React, { Fragment }  from 'react'
 import { useForm } from "react-hook-form"
-import GymView from './GymView'
+import GymView from '../climbs/GymView'
 
+// Component for the view when users click the 'Climbs' link in the navbar
 const Climbs = () => {
     const { register, watch } = useForm()
 

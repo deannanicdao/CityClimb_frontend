@@ -1,12 +1,11 @@
 import React from 'react'
 
-const ReadableDate = (props) => {
-    // console.log(props.date)
-    const date = props.date 
-    const year = props.year 
+// Takes in any format of date and turns it into human readable form
+// year is an optional prop for when that additonal specificity is required 
+const ReadableDate = ({ date, year }) => {
 
     let readableDate
-    if(year == true){
+    if(year){
         readableDate = new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric'})
     } else {
         readableDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric'})
