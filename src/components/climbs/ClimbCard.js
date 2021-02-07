@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import EditClimbButton from './EditClimbButton'
+import SetRemovalDateButton from './SetRemovalDateButton'
 
 import {
     Card, CardImg, CardText, CardBody,
@@ -27,7 +28,8 @@ const Climb = (props) => {
                 </Link>
 
                 <EditClimbButton gym={gym} colour={colour} climbId={_id} />
-                <Button>Set Removal</Button>
+                {/* <Button>Set Removal</Button> */}
+                <SetRemovalDateButton climb={climb} />
             </Card>
 )
 }
