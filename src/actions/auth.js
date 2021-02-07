@@ -14,12 +14,16 @@ import {
 // Load User
 export const loadUser = () => async dispatch => {
   try {
+    console.log('inside loadUser - before GET req to /auth')
     const res = await api.get('/auth');
+    console.log("inside loadUser after GET req to /auth")
 
     dispatch({
       type: USER_LOADED,
       payload: res.data
     });
+
+    console.log('inside loadUser - after dispatch of USER_LOADED')
   } catch (err) {
     dispatch({
       type: AUTH_ERROR
@@ -33,12 +37,17 @@ export const register = formData => async dispatch => {
     console.log('Inside actions/auth/register')
     const res = await api.post('/auth/register', formData);
     // const res = await axios.post('auth/register', body, config)
-
+    
+    console.log("inside Register Success")
+    console.log(res.data)
+    
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data
     });
+
     dispatch(loadUser());
+
   } catch (err) {
     const errors = err.response.data.errors;
 

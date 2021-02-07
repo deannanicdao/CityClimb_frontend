@@ -15,6 +15,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     staffNumber: ''
   });
 
+  console.log("Start register")
+
   const { name, email, password, confirmPassword, staffNumber } = formData;
   
   const onChange = (e) =>
@@ -50,7 +52,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    console.log('isAuthenticated!!!!!')
+    return <Redirect to="/staff_dashboard" />;
   }
 
   return (
