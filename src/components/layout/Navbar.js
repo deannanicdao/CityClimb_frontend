@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className='navbar-container'>
             {/* Logo */}
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              <img src='./icon.png' alt='logo' width='50px' height='50px'></img>
+              <img src='/icon.png' alt='logo' width='50px' height='50px'></img>
             </Link>
 
             {/* Hamburger menu */}
@@ -67,7 +67,7 @@ const Navbar = () => {
 
               <li className='nav-item'>
                 <Link to='/search' className='nav-links' onClick={closeMobileMenu}>
-                  Search
+                  Climbs
                 </Link>
               </li>
 
@@ -77,15 +77,30 @@ const Navbar = () => {
                 </Link>
               </li>
 
+
+              <li className='nav-item'>
+                <Link to='/staff_login' className='nav-links' onClick={closeMobileMenu}>
+                  Login
+                </Link>
+              </li>
+
+              {/* Visible when Staff or Admin Logged in */}
               <li className='nav-item'>
                 <Link to='/help' className='nav-links' onClick={closeMobileMenu}>
-                  Help
+                  Create
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='/create_climb' className='nav-links' onClick={closeMobileMenu}>
-                  Create
+                <Link to='/staff_logout' className='nav-links' onClick={closeMobileMenu}>
+                  Logout
+                </Link>
+              </li>
+
+              {/* Visible only when Admin Logged in */}
+              <li className='nav-item'>
+                <Link to='/staff_dashboard' className='nav-links' onClick={closeMobileMenu}>
+                  Dashboard
                 </Link>
               </li>
 
@@ -95,23 +110,6 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className='nav-item'>
-                <Link to='/staff_dashboard' className='nav-links' onClick={closeMobileMenu}>
-                  Dashboard
-                </Link>
-              </li>
-
-              <li className='nav-item'>
-                <Link to='/climb_template' className='nav-links' onClick={closeMobileMenu}>
-                  Temp
-                </Link>
-              </li>
-
-              <li className='nav-item'>
-                <Link to='/staff_login' className='nav-links' onClick={closeMobileMenu}>
-                  Login
-                </Link>
-              </li>
 
             </ul> 
               
