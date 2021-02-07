@@ -1,4 +1,3 @@
-import { start } from '@popperjs/core';
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import ClimbCard from '../climbs/ClimbCard'
@@ -39,8 +38,8 @@ const Schedule = () => {
     // console.log(endDate)
     let climbsLeaving = climbs.filter(climb => {return(Date.parse(climb.removalDate) < endDate)})
     let climbsNew = climbs.filter(climb => {return (Date.parse(climb.createdAt) > startDate )} )
-    console.log("climb's leaving", climbsLeaving)
-    console.log('New climbs', climbsNew)
+    // console.log("climb's leaving", climbsLeaving)
+    // console.log('New climbs', climbsNew)
 
     // let miltonNew = newAtGym(climbsNew, "milton")
 
@@ -84,7 +83,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.removalDate} />
+                        <ReadableDate date={climb.removalDate} year={false} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>

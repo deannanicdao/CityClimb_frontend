@@ -1,15 +1,22 @@
 import React from 'react'
 
 const ReadableDate = (props) => {
-    console.log(props.date)
+    // console.log(props.date)
+    const date = props.date 
+    const year = props.year 
 
-    const date = new Date(props.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric'})
+    let readableDate
+    if(year == true){
+        readableDate = new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric'})
+    } else {
+        readableDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric'})
+    }
 
     
     return (
-        <div>
-        {date}
-        </div>)
+        <span>
+        {readableDate}
+        </span>)
 }
 
 export default ReadableDate
