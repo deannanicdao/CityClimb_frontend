@@ -68,7 +68,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.removalDate} />
+                        Leaving - <ReadableDate date={climb.removalDate} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>
@@ -83,7 +83,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.removalDate} year={false} />
+                        Leaving - <ReadableDate date={climb.removalDate} year={false} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>
@@ -98,7 +98,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.removalDate} />
+                        Leaving - <ReadableDate date={climb.removalDate} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>
@@ -116,7 +116,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.createdAt} />
+                        Set on - <ReadableDate date={climb.createdAt} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>
@@ -131,7 +131,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.createdAt} />
+                        Set on - <ReadableDate date={climb.createdAt} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>
@@ -146,7 +146,7 @@ const Schedule = () => {
                     xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
                     lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
                     >
-                        <ReadableDate date={climb.createdAt} />
+                        Set on - <ReadableDate date={climb.createdAt} />
                         <ClimbCard climb={climb} />
                     <br />
                     </Col>

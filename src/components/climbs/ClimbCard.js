@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import EditClimbButton from './EditClimbButton'
+import SetRemovalDateButton from './SetRemovalDateButton'
 
 import {
     Card, CardImg, CardText, CardBody,
@@ -8,7 +9,6 @@ import {
 } from 'reactstrap';
 
 const Climb = (props) => {
-    // console.log(props)
     const climb = props.climb
     let { _id, wall, colour, image, gym } = climb
     console.log('inside climb card')
@@ -27,7 +27,8 @@ const Climb = (props) => {
                 </Link>
 
                 <EditClimbButton gym={gym} colour={colour} climbId={_id} />
-                <Button>Set Removal</Button>
+
+                <SetRemovalDateButton climb={climb} />
             </Card>
 )
 }
