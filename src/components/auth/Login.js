@@ -1,62 +1,59 @@
 import React, { Fragment, useState } from 'react'
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: '',
-        staffNumber: '',
         password: ''
     })
 
-    const { email, staffNumber, password } = formData
+    const { email, password } = formData
 
     const onChange = e => 
         setFormData({ ...formData, [e.target.name]: e.target.value })
 
-    const onSubmit = async e => {
+    const onSubmit = e => {
         e.preventDefault()
-        console.log(formData)
-
-        const loggedInUser = {
-            email, 
-            staffNumber,
-            password
-        }
-
-        try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
-
-            const body = JSON.stringify(loggedInUser)
-
-            // const res = await axios.get('/users', body, config)
-            // console.log(res.data)
-        } catch (err) {
-            console.error(err.message)
-        }
+        login(email, password)
     }
-
-
+    
+    if (isAuthenticated) {
+        console.log('isAuthenticated via login')
+        return <Redirect to="/" />;
+    }
+        
+        
     return (
         <Fragment>
-            <h1>Login</h1>
-            <form className='form' onSubmit={e => onSubmit(e)}>
-                <div className='form-group'>
-                    <input type='text' placeholder='Email Address' name='email' value={email} onChange={e => onChange(e)} required />
-                </div>
-                <div className='form-group'>
-                    <input type='text' placeholder='Staff Number' name='staffNumber' value={staffNumber} onChange={e => onChange(e)} required />
-                </div>
-                <div className='form-group'>
-                    <input type='text' placeholder='Password' name='password' value={password} onChange={e => onChange(e)} required />
-                </div>
-                <input type="submit" className="btn btn-primary" value="Login"/>
-            </form>
+        <h1>Login</h1>
+        <form className='form' onSubmit={e => onSubmit(e)}>
+            <div className='form-group'>
+                <input type='text' placeholder='Email Address' name='email' value={email} onChange={e => onChange(e)} required />
+            </div>
+            {/* <div className='form-group'>
+                <input type='text' placeholder='Staff Number' name='staffNumber' value={staffNumber} onChange={e => onChange(e)} required />
+            </div> */}
+            <div className='form-group'>
+                <input type='text' placeholder='Password' name='password' value={password} onChange={e => onChange(e)} required />
+            </div>
+            <input type="submit" className="btn btn-primary" value="Login"/>
+        </form>
         </Fragment>
     )
 }
 
-export default Login
+
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(Login);
