@@ -12,16 +12,16 @@ const SingleClimb = (props) => {
     const API_ENDPOINT = "http://localhost:8000"
     const { gym, colour, climbId } = props.match.params
 
-    console.log(props)
+    console.log("inside single climb")
 
     const url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${climbId}`
 
-    console.log(url)
+    // console.log(url)
 
     const [climb, setClimb] = useState([])
 
     useEffect(() => {
-        console.log("Mounted")
+        console.log("Single Climb Mounted")
 
         fetch(url)
         .then(res => res.json())
