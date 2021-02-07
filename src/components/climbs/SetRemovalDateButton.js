@@ -1,7 +1,6 @@
 import { Button } from 'reactstrap'
 
 // Clicking this button sets the removal date for 14 days from the current date
-// 
 const SetRemovalDateButton = ( {climb} ) => {
 
     const API_ENDPOINT = "http://localhost:8000"
@@ -10,14 +9,14 @@ const SetRemovalDateButton = ( {climb} ) => {
 
   function handleClick() {
 
-    // Sets the removal date for 14 days from the current date
+    // Corresponds to addRemovalDate in API's climb_controller.js file 
     fetch(`${url}`, {
         method: 'PATCH'
     }).then(res => res.json()).then((results) => console.log(results))
   }
 
   return (
-    <Button onClick={handleClick}>Set Removal</Button>
+    <Button onClick={handleClick}>Set 2 Week Removal Date</Button>
   );
 }
 
