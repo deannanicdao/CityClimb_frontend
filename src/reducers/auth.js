@@ -1,6 +1,6 @@
 import {
   REGISTER_SUCCESS,
-  //REGISTER_FAIL,
+  REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
@@ -9,6 +9,7 @@ import {
   ACCOUNT_DELETED
 } from '../actions/types';
 
+console.log('before initialState in reducers/auth')
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
@@ -17,6 +18,7 @@ const initialState = {
 };
 
 function authReducer(state = initialState, action) {
+  console.log('inside authReducer in reducers/auth')
   const { type, payload } = action;
 
   switch (type) {
@@ -29,10 +31,20 @@ function authReducer(state = initialState, action) {
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
+      console.log('Inside REGISTER_SUCCESS')
+      // localStorage.setItem('token', payload.token)
       return {
         ...state,
         ...payload,
         isAuthenticated: true,
+        loading: false
+      };
+    case REGISTER_FAIL:
+      // localStorage.removeItem('token')
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
         loading: false
       };
     case ACCOUNT_DELETED:

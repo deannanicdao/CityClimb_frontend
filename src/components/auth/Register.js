@@ -11,21 +11,42 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    staffNumber: ''
   });
 
-  const { name, email, password, confirmPassword } = formData;
-
+  const { name, email, password, confirmPassword, staffNumber } = formData;
+  
   const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+  
   const onSubmit = async (e) => {
+    console.log('Form data:')
+    console.log(formData)
     e.preventDefault();
     if (password !== confirmPassword) {
       setAlert('Passwords do not match', 'danger');
-    } else {
-      register({ name, email, password });
+      console.log('Passwords error')
     }
+
+    if (!email) {
+      setAlert('Please enter a valid email', 'danger');
+      console.log('Email error')
+    }
+    if (!name) {
+      setAlert('Please enter a valid name', 'danger');
+      console.log('Name blank')
+    }
+    if (!staffNumber) {
+      setAlert('Please enter a valid staff number', 'danger');
+      console.log('Staff number blank')
+    }
+
+    if (name && email && password && staffNumber !== "") {
+      register({ name, email, password, staffNumber });
+      console.log('User registered')
+    }
+    
   };
 
   if (isAuthenticated) {
@@ -45,6 +66,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder="Name"
             name="name"
             value={name}
+            onChange={onChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Staff Number"
+            name="staffNumber"
+            value={staffNumber}
             onChange={onChange}
           />
         </div>
