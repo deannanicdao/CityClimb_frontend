@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import ReadableDate from '../layout/ReadableDate'
-import DeleteClimbButton from './DeleteClimbButton'
+import ReadableDate from '../../layout/ReadableDate'
+import DeleteClimbButton from '../buttons/DeleteClimbButton'
 import { useHistory } from "react-router-dom"
 
 
@@ -35,7 +35,7 @@ const EditClimbForm = (props) => {
         }
     }, [])
 
-
+    //When the climb is edited the new details will render on the page
     useEffect(() => {
         console.log("Edit Climb useEffect Rendered on Climb change")
         console.log(climb)
@@ -53,8 +53,11 @@ const EditClimbForm = (props) => {
     const youtubeUrl = `https://www.youtube.com/embed/${climb.video}`
 
 
+    // After fetch setClimb to the results of the update so that the current page will update with the details
+    // use history.push to update the url to the new params 
     const onSubmit = (data) => {
         const formData = new FormData()
+
         formData.append("gym", data.gym)
         formData.append("wall", data.wall)
         formData.append("colour", data.colour)
@@ -66,8 +69,6 @@ const EditClimbForm = (props) => {
             method: 'PATCH',
             body: formData,
         }).then(res => res.json()).then((results) => setClimb(results.result))
-            // res.json()).then((results) => console.log(results.result))
-
 
         history.push(`/climbs/${data.gym}/${data.colour}/${climbId}/edit`)
     }
@@ -76,7 +77,7 @@ const EditClimbForm = (props) => {
     console.log(errors)
 
     const youtubeRegex = /(?:https?:\/\/)?(?:(?:(?:www\.?)?youtube\.com(?:\/(?:(?:watch\?.*?(v=[^&\s]+).*)|(?:v(\/.*))|(channel\/.+)|(?:user\/(.+))|(?:results\?(search_query=.+))))?)|(?:youtu\.be(\/.*)?))/
-    // onChange={value => props.input.onChange(value)}
+
     return (
         <div>
             <h2>Edit Climb with id: {climbId}</h2>
@@ -89,7 +90,6 @@ const EditClimbForm = (props) => {
                 <li>Youtube ID: {video}</li>
                 <li>Image ID: {image}</li>
                 {climb.removalDate && <li> Removal Date: {<ReadableDate date={climb.removalDate} year={true}/>}</li>}
-                
             </ul>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -105,9 +105,6 @@ const EditClimbForm = (props) => {
                 <label className="text-gray-700">
                     Wall
       <input type="text" name="wall" placeholder="Wall name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
-                        {/* <option value="Dungeon">Dungeon</option>
-                        <option value="Zepellin">Zepellin</option>
-                        <option value="Cave">Cave</option> */}
                     </input>
                 </label>
                 <label className="text-gray-700">
@@ -129,7 +126,6 @@ const EditClimbForm = (props) => {
 
                 <br></br>
                 <br></br>
-                {/* https://tailwindcomponents.com/component/tailwind-file-upload */}
                
                     <input ref={register} type="file" name="image" />
 
@@ -138,7 +134,6 @@ const EditClimbForm = (props) => {
                     Edit Climb
                 </button>
 
-                {/* <EditClimbButton gym={gym} colour={colour} climbId={climbId} /> */}
             </form>
 
             <DeleteClimbButton climb={climb} />
