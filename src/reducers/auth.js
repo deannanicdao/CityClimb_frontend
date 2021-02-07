@@ -57,6 +57,7 @@ function authReducer(state = initialState, action) {
       };
     case AUTH_ERROR:
     case LOGOUT:
+      console.log('Inside LOGOUT')
       return {
         ...state,
         token: null,

@@ -14,9 +14,11 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-
-const Example = (props) => {
+const Example = ({ logout }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -67,6 +69,11 @@ const Example = (props) => {
               <NavLink> <Link to="/climb_template"> Climb </Link> </NavLink>
             </NavItem>
 
+            <NavItem>
+              {/* <button onClick={() => {logout}}>Log out</button> */}
+              <NavLink> <a onClick={logout} href="#!"> Logout </a> </NavLink>
+            </NavItem>
+
             </Nav>
             </Collapse>
             
@@ -75,4 +82,15 @@ const Example = (props) => {
   )
 }
 
-export default Example;
+
+Example.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, { logout })(Example);
+// TODO: Change EXAMPLE to something else
