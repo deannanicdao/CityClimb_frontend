@@ -12,6 +12,7 @@ const Schedule = () => {
             .then(res => res.json())
             .then(data => {
                 setClimbs(data)
+                console.log(data)
             })
             .catch(e => console.log(e))
 
@@ -19,13 +20,6 @@ const Schedule = () => {
             console.log('Unmounted (inside schedule)')
         }
     }, [])
-<<<<<<< HEAD
-
-    return (
-        
-        <div className='container'>
-
-=======
 
     // startDate is equal to 14 days before today
     const startDate = (Date.now() - (12096e5))
@@ -51,7 +45,6 @@ const Schedule = () => {
 
     return (
         <>
->>>>>>> df8943a1e9afae83f7b91916fafacfa315b3438a
             <br />
             <details>
                 <summary>Leaving Soon</summary>
@@ -71,37 +64,6 @@ const Schedule = () => {
                 <h3>Milton</h3>
                 <ClimbRowCol climbs={miltonNew} showCreatedDate={true} />
 
-<<<<<<< HEAD
-            {/* id gymn wall colour image video  */}
-
-            <Row gutter={40}>
-                {(climbs).map(climb => 
-
-                    <Col // Responsive settings. Each row has a span of 12
-                    xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 6 }} // 2 cards per row
-                    lg={{ span: 4 }} xl={{ span: 4 }} // 3 cards per row
-                    >
-                        
-                    <Card> 
-                        <CardImg top width="100%" src={"http://res.cloudinary.com/coderacademy/image/upload"+climb.image} alt="Card image cap" />
-                        <CardBody>
-                        <CardTitle tag="h5">{climb.wall}</CardTitle>
-                        <CardSubtitle tag="h6" className="mb-2 text-muted">{climb.colour}</CardSubtitle>
-                        <CardText>{climb.gym}</CardText>
-                        <Button> View Climb </Button>
-                           
-                        </CardBody>
-                    </Card>
-                    
-                    <br />
-                    </Col>
-                )}
-            </Row>
-       </div>
-        
-      );
-    };
-=======
                 <h3>Newstead</h3>
                 <ClimbRowCol climbs={newsteadNew} showCreatedDate={true} />
 
@@ -111,6 +73,5 @@ const Schedule = () => {
         </>
     )
 }
->>>>>>> df8943a1e9afae83f7b91916fafacfa315b3438a
 
 export default Schedule

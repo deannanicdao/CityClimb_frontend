@@ -9,7 +9,6 @@ const Climbs = () => {
     const selectedGym = watch("gym", false)
 
     
-
     return (
         <Fragment>
             <p className='large'>Select Gym</p>
