@@ -26,7 +26,7 @@ const Example = ({ logout }) => {
 
   return (
     <div >
-      <Navbar  color="light" className="text-right"light expand="lg" style={{justify_content: "flex-end"}}>
+      <Navbar  color="dark" className="text-right"light expand="lg" style={{justify_content: "flex-end"}}>
         <NavbarBrand href="/"><img src="./icon-black.png" alt="logo" width="50px" height="50px"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar >

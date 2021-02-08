@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ClimbRowCol from './ClimbRowCol'
+import './GymnView.css'
 
 // This component fetches and displays the climbs for a gym/colour combo
 const ListByColour = (props) => {
@@ -32,11 +33,15 @@ const ListByColour = (props) => {
     }, [])
     
     return (
-        <>
-            {colour.toUpperCase()}
+       
+        <div className="colour-view-border">
+            <h1>
+                {colour.toUpperCase()}
+            </h1>
             <br />
-            <ClimbRowCol climbs={climbs}/>
-        </>
+                <ClimbRowCol climbs={climbs}/>
+        </div>
+       
       );
 
 } 
