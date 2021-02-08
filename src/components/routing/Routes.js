@@ -12,7 +12,7 @@ import SingleClimb from './../layout/SingleClimb'
 
 export const Routes = () => {
     return (
-        <section className="container">
+        <section>
             <Switch>
                 <Route exact path="/staff_register" component={Register} />
                 <Route exact path="/staff_login" component={Login} />

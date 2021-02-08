@@ -1,10 +1,5 @@
-import React, { useState, Fragment } from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom"
+import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 import {
   Collapse,
   Navbar,
@@ -43,10 +38,6 @@ const Example = ({ logout }) => {
               <NavLink> <Link to="/schedule"> Schedule </Link> </NavLink>
             </NavItem>
 
-            <NavItem>
-              <NavLink> <Link to="/help"> Help </Link> </NavLink>
-            </NavItem>
-
             {/* Only visible when logged in as staff */}
             <NavItem>
               <NavLink> <Link to="/create_climb"> Create Climb </Link> </NavLink>
@@ -63,10 +54,6 @@ const Example = ({ logout }) => {
 
             <NavItem>
               <NavLink> <Link to="/staff_dashboard"> Staff Dashboard </Link> </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink> <Link to="/climb_template"> Climb </Link> </NavLink>
             </NavItem>
 
             <NavItem>
