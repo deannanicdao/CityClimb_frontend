@@ -27,6 +27,8 @@ const Schedule = () => {
     // endDate is equal to 14 days before today
     const endDate = (Date.now() + 12096e5)
 
+    console.log(climbs)
+
     // Create arrays of all climbs leaving and all climbs newly created
     let climbsLeaving = climbs.filter(climb => { return (Date.parse(climb.removalDate) < endDate) })
     let climbsNew = climbs.filter(climb => { return (Date.parse(climb.createdAt) > startDate) })

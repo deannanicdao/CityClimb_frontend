@@ -2,6 +2,7 @@ import React from 'react'
 import {
     Jumbotron
 } from 'reactstrap';
+import './Climb.css'
 
 const Climb = () => {
 

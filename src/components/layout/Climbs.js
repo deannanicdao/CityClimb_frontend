@@ -1,6 +1,8 @@
 import React, { Fragment }  from 'react'
 import { useForm } from "react-hook-form"
 import GymView from '../climbs/GymView'
+import './Climbs.css'
+
 
 // Component for the view when users click the 'Climbs' link in the navbar
 const Climbs = () => {
@@ -10,18 +12,21 @@ const Climbs = () => {
 
     
     return (
-        <Fragment>
-            <p className='large'>Select Gym</p>
+        <div className="main-container">
+            <h1>Select Gym</h1>
+            <p> 
             <form>
-                <input type="radio" name="gym" value="milton" ref={register}/>Milton
-                <input type="radio" name="gym" value="newstead" ref={register}/>Newstead
-                <input type="radio" name="gym" value="westend" ref={register}/>West End
+            <input className="radio-buttons" type="radio" name="gym" value="milton" ref={register}/> Milton <br />
+                <input type="radio" name="gym" value="newstead" ref={register}/> Newstead <br />
+                <input type="radio" name="gym" value="westend" ref={register}/> West End <br />
             </form>
+            </p>
 
             {selectedGym == "milton" && <GymView gym={"milton"}/>}
             {selectedGym == "newstead" && <GymView gym={"newstead"}/>}
             {selectedGym == "westend" && <GymView gym={"westend"}/>}
-        </Fragment>
+            
+        </div>
     )
 }
 
