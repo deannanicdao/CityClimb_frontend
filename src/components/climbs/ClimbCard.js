@@ -5,30 +5,36 @@ import SetRemovalDateButton from './buttons/SetRemovalDateButton'
 
 import {
     Card, CardImg, CardText, CardBody,
- CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
 const Climb = (props) => {
+
+
+
     const climb = props.climb
     let { _id, wall, colour, image, gym } = climb
 
     return (
-            <Card> 
-                <Link to={`/climbs/${gym}/${colour}/${_id}`}> 
-                    <CardImg top width="100%" src={`http://res.cloudinary.com/coderacademy/image/upload${image}`} alt="Card image cap" />
-                    <CardBody>
+        <Card>
+            <Link to={`/climbs/${gym}/${colour}/${_id}`}>
+                <CardImg top width="100%" src={`http://res.cloudinary.com/coderacademy/image/upload${image}`} alt="Card image cap" />
+                <CardBody>
                     <CardTitle tag="h5">{wall}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{colour}</CardSubtitle>
                     <CardText>{_id}</CardText>
-                    </CardBody>
-                </Link>
+                </CardBody>
+            </Link>
 
+            {localStorage.token && <>
                 <EditClimbButton gym={gym} colour={colour} climbId={_id} />
-
                 <SetRemovalDateButton climb={climb} />
-            </Card>
-)
+                </>
+            }
+
+        </Card>
+    )
 }
 
 
-export default Climb 
+export default Climb    
