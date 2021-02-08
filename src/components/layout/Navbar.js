@@ -66,10 +66,6 @@ const Example = ({ logout }) => {
             </NavItem>
 
             <NavItem>
-              <NavLink> <Link to="/climb_template"> Climb </Link> </NavLink>
-            </NavItem>
-
-            <NavItem>
               {/* <button onClick={() => {logout}}>Log out</button> */}
               <NavLink> <a onClick={logout} href="#!"> Logout </a> </NavLink>
             </NavItem>

@@ -12,7 +12,7 @@ import NotFound from '../layout/NotFound'
 import ClimbList from './../layout/ClimbList'
 // import Climb from './../climbs/Climb'
 import SingleClimb from './../layout/SingleClimb'
-
+import PrivateRoute from './PrivateRoute';
 
 export const Routes = () => {
     return (
