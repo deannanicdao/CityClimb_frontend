@@ -8,20 +8,21 @@ import StaffDashboard from './../admin/StaffDashboard'
 import CreateClimbForm from './../climbs/forms/CreateClimbForm'
 import EditClimbForm from '../climbs/forms/EditClimbForm'
 import SingleClimb from './../layout/SingleClimb'
-
+import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
 
 export const Routes = () => {
     return (
         <section>
             <Switch>
-                <Route exact path="/staff_register" component={Register} />
+                <AdminRoute exact path="/staff_register" component={Register} />
                 <Route exact path="/staff_login" component={Login} />
                 <Route exact path="/climbs" component={Climbs} />
                 <Route exact path="/schedule" component={Schedule} />
-                <Route exact path="/staff_dashboard" component={StaffDashboard} />
-                <Route exact path="/create_climb" component={CreateClimbForm} />
-                <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
-                <Route exact path="/climbs/:gym/:colour/:climbId/edit" component={EditClimbForm} />
+                <AdminRoute exact path="/staff_dashboard" component={StaffDashboard} />
+                <PrivateRoute exact path="/create_climb" component={CreateClimbForm} />
+                <PrivateRoute exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
+                <PrivateRoute exact path="/climbs/:gym/:colour/:climbId/edit" component={EditClimbForm} />
                 <Redirect to="/" />
             </Switch>
         </section>
