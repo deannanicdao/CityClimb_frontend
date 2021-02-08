@@ -20,7 +20,7 @@ const StaffDashboard = () => {
     }, [])
 
     return (
-        <div>
+        <div className='main-container'>
             Dashboard for Staff
             <p>Users: {(users).map(user => user.name)}</p>
         </div>

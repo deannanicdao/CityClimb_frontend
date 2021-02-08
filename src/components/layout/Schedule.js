@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ClimbRowCol from '../climbs/ClimbRowCol'
+import './Schedule.css'
 
 const Schedule = () => {
 
@@ -46,9 +47,13 @@ const Schedule = () => {
     let westendNew = climbsNew.filter(climb => climb.gym == "westend")
 
     return (
-        <>
+        <div className="schedule-container">
+            
+
+            
             <br />
             <details>
+                
                 <summary>Leaving Soon</summary>
                 <h3>Milton</h3>
                 <ClimbRowCol climbs={miltonLeaving} showRemovalDate={true} />
@@ -58,7 +63,7 @@ const Schedule = () => {
 
                 <h3>West End</h3>
                 <ClimbRowCol climbs={westendLeaving} showRemovalDate={true} />
-
+            
             </details>
 
             <details>
@@ -72,7 +77,7 @@ const Schedule = () => {
                 <h3>West End</h3>
                 <ClimbRowCol climbs={westendNew} showCreatedDate={true} />
             </details>
-        </>
+        </div>
     )
 }
 

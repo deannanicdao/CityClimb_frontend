@@ -13,7 +13,7 @@ video {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
@@ -60,7 +60,7 @@ video {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
-
+  
   .radio-buttons {
     margin-top: 8px;
     color: #fff;

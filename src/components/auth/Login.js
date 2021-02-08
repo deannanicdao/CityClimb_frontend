@@ -28,7 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
         
         
     return (
-        <Fragment>
+        <div className="main-container">
         <h1>Login</h1>
         <form className='form' onSubmit={e => onSubmit(e)}>
             <div className='form-group'>
@@ -42,7 +42,7 @@ const Login = ({ login, isAuthenticated }) => {
             </div>
             <input type="submit" className="btn btn-primary" value="Login"/>
         </form>
-        </Fragment>
+        </div>
     )
 }
 
