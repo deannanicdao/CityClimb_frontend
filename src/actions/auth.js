@@ -5,6 +5,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
+  ADMIN_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -24,6 +25,26 @@ export const loadUser = () => async dispatch => {
     });
 
     console.log('inside loadUser - after dispatch of USER_LOADED')
+  } catch (err) {
+    dispatch({
+      type: AUTH_ERROR
+    });
+  }
+};
+
+// Load Admin
+export const loadAdmin = () => async dispatch => {
+  try {
+    console.log('inside loadAdmin - before GET req to /auth')
+    const res = await api.get('/auth');
+    console.log("inside loadAdmin after GET req to /auth")
+
+    dispatch({
+      type: ADMIN_LOADED,
+      payload: res.data
+    });
+
+    console.log('inside loadAdmin - after dispatch of ADMIN_LOADED')
   } catch (err) {
     dispatch({
       type: AUTH_ERROR
