@@ -105,11 +105,6 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
         </NavLink>
       </NavItem>
 
-      <NavItem>
-        <NavLink> 
-          <Link to="/help"> Help </Link> 
-        </NavLink>
-      </NavItem>
     </Navbar>
   )
 
