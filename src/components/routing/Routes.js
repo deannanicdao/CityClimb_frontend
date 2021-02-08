@@ -18,17 +18,17 @@ export const Routes = () => {
     return (
         <section className="container">
             <Switch>
-                <Route exact path="/staff_register" component={Register} />
+                <PrivateRoute exact path="/staff_register" component={Register} />
                 <Route exact path="/staff_login" component={Login} />
                 <Route exact path="/climbs" component={Climbs} />
                 <Route exact path="/schedule" component={Schedule} />
-                <Route exact path="/staff_dashboard" component={StaffDashboard} />
+                <PrivateRoute exact path="/staff_dashboard" component={StaffDashboard} />
                 <Route exact path="/create_climb" component={CreateClimbForm} />
                 {/* <Route path="/climbs/:gym/:colour" component={ClimbList} /> */}
-                <Route exact path="/climbs/:gym/:colour" render={(props) => <ClimbList {...props} />} />
-                <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
+                <PrivateRoute exact path="/climbs/:gym/:colour" render={(props) => <ClimbList {...props} />} />
+                <PrivateRoute exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
                 {/* <Route exact path="/climbs/:gym/:colour/:climbId/edit" render={(props) => <EditClimbForm {...props} />} /> */}
-                <Route exact path="/climbs/:gym/:colour/:climbId/edit" component={EditClimbForm} />
+                <PrivateRoute exact path="/climbs/:gym/:colour/:climbId/edit" component={EditClimbForm} />
                 <Route exact path="/help" component={Help} />
                 {/* <Route exact path="/climb_template" component={Climb} /> */}
                 <Route component={NotFound} /> 
