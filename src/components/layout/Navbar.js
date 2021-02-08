@@ -23,12 +23,6 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
         </NavLink>
       </NavItem>
 
-      <NavItem> 
-        <NavLink> 
-          <Link to="/create_climb"> Create Climb </Link>
-        </NavLink>
-      </NavItem>
-
       <NavItem>
         <NavLink> 
           <Link to="/climbs"> Climbs </Link> 

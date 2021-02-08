@@ -22,13 +22,6 @@ const App = () => {
       setAuthToken(localStorage.token);
     }
 
-    // check if admin or general auth user
-    // if (localStorage.token) {
-    //   store.dispatch(loadAdmin())
-    // } else {
-    //   store.dispatch(loadUser());
-    // }
-
     // log user out from all tabs if they log out in one tab
     window.addEventListener('storage', () => {
       if (!localStorage.token) store.dispatch({ type: LOGOUT });
