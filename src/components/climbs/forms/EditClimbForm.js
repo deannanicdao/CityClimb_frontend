@@ -103,8 +103,8 @@ const EditClimbForm = (props) => {
                     </select>
                 </label>
                 <label className="text-gray-700">
-                    Wall
-      <input type="text" name="wall" placeholder="Wall name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    Climb Name
+      <input type="text" name="wall" placeholder="Climb name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                     </input>
                 </label>
                 <label className="text-gray-700">
@@ -131,7 +131,7 @@ const EditClimbForm = (props) => {
 
                 <br></br>
                 <button type="submit" className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-1/6 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    Edit Climb
+                    Update Climb
                 </button>
 
             </form>
