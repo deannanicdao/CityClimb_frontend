@@ -169,13 +169,22 @@ Loads to the page of the climb: **Gushing Mountain**
 ### Manual User Testing Development
 
 https://streamable.com/z87ufh
+
 https://streamable.com/4lf82v
+
 https://streamable.com/lbv2q4
 
-![Spreadsheet of tests](docs/images/user_testing_dev.png)
+![User Tasks](docs/images/user_testing_dev1.png)
+![Climb CRUD](docs/images/user_testing_dev2.png)
+![View Climbs](docs/images/user_testing_dev3.png)
+
+<br />
 
 ### Manual User Testing Production
-![Spreadsheet of tests](docs/images/user_testing_prod.png)
+
+![User Tasks](docs/images/user_testing_prod1.png)
+![Climb CRUD](docs/images/user_testing_prod2.png)
+![View Climbs](docs/images/user_testing_prod3.png)
 
 <br />
 
