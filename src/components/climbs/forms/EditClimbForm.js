@@ -68,7 +68,10 @@ const EditClimbForm = (props) => {
         fetch(`${url}/edit`, {
             method: 'PATCH',
             body: formData,
-        }).then(res => res.json()).then((results) => setClimb(results.result))
+        }).then(res => res.json())
+        .then((results) => setClimb(results.result))
+        .then((results) => {(alert(`Climb updated`))})
+        
 
         history.push(`/climbs/${data.gym}/${data.colour}/${climbId}/edit`)
     }

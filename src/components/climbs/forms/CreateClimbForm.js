@@ -1,9 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from "react-router-dom"
 
 
 const CreateClimbForm = () => {
-
+    let history = useHistory()
     const API_ENDPOINT = "http://localhost:8000"
     const url = `${API_ENDPOINT}/climbs`
 
@@ -24,7 +25,11 @@ const CreateClimbForm = () => {
         fetch(url, {
             method: 'POST',
             body: formData,
-        })
+        }).then(res => res.json()).then((results) => {(alert(`Climb Created Successfully`))})
+
+
+
+        history.push(`/`)
     }
 
     console.log(errors)
