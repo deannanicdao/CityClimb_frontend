@@ -27,10 +27,7 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
         return <Redirect to="/" />;
     }
 
-    if (isAdmin) {
-        console.log('isAdmin via login')
-        return <Redirect to="/" />;
-    }
+  
         
         
     return (

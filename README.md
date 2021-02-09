@@ -135,9 +135,12 @@ The secondary target audiences are city climb patrons and new visitors who wish 
 - DataURI
 - dotenv
 - multer
-- redux
+- react-redux
+    Redux is a state management library. It is useful when an app has many states in several places of the app and is frequently updated over time; as future prototypes of the app has many social media features (with likes and comments), CityClimb incorporated redux. 
 - redux-thunk
+    Redux-thunk middleware is used to write action creators, which return a function rather than an action. It was utilised to conditionally render an action for authentication by checking whether the user's admin role was `true` on the backend and checking the state for `isAdmin` vs `isAuthenticated` and JSON web token (default: null). 
 - uuid
+
 - axios
 
 ### Backend
@@ -151,6 +154,8 @@ The secondary target audiences are city climb patrons and new visitors who wish 
 - dotenv 
 - multer
 - jsonwebtoken
+
+
 - multer
 
 ### Deployment

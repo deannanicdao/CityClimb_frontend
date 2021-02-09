@@ -96,26 +96,8 @@ export const login = (email, password ) => async dispatch => {
       payload: res.data
     })
     
-    console.log('This is the res.data:')
-    console.log(res.data)
-
-
-    console.log('This is the res.user:')
-    console.log(res.data.user)
     const user = res.data.user
 
-    // console.log('This is the token:')
-    // console.log(token)
-
-    console.log('This is the user.id:')
-    console.log(user.id)
-
-    console.log('This is the user.admin:')
-    console.log(user.admin)
-
-    // let admin = res.data.admin
-
-    dispatch(loadUser())
     if (user.admin == true) {
       dispatch(loadAdmin())
     } else {

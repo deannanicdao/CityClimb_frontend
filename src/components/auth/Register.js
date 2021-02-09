@@ -28,11 +28,6 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
     // console.log(admin)
     e.preventDefault();
 
-    if (isAuthenticated) {
-      console.log('isAuthenticated in Register')
-      return <Redirect to="/" />;
-    }
-
     if (password !== confirmPassword) {
       setAlert('Passwords do not match', 'danger');
       console.log('Passwords error')
@@ -62,6 +57,7 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
     }
     
   };
+
 
 
   return (
