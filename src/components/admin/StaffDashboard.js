@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { Row, Col } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 const StaffDashboard = () => {
     const [users, setUsers] = useState([])
@@ -20,10 +20,34 @@ const StaffDashboard = () => {
     }, [])
 
     return (
-        <div>
-            Dashboard for Staff
-            <p>Users: {(users).map(user => user.name)}</p>
-        </div>
+        <Table striped bordered hover size="sm">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Staff Number</th>
+                <th>Staff ID</th>
+                {/* <th>Options</th> */}
+                </tr>
+            </thead>
+            {(users).map(user =>
+            <>
+                <tbody>
+                    <tr>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.staffNumber}</td>
+                        <td>{user._id}</td>
+                        {/* <td>
+                            <EditStaffButton name={user.name} email={user.email} staffNumber={user.staffNumber} id={user._id} />
+
+                            <button>Delete</button>
+                        </td> */}
+                    </tr>
+                </tbody>
+            </>
+            )}
+        </Table>
     )
 }
 
