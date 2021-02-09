@@ -21,7 +21,7 @@ export const Routes = () => {
                 <Route exact path="/schedule" component={Schedule} />
                 <AdminRoute exact path="/staff_dashboard" component={StaffDashboard} />
                 <PrivateRoute exact path="/create_climb" component={CreateClimbForm} />
-                <PrivateRoute exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
+                <Route exact path="/climbs/:gym/:colour/:climbId" component={SingleClimb} />
                 <PrivateRoute exact path="/climbs/:gym/:colour/:climbId/edit" component={EditClimbForm} />
                 <Redirect to="/" />
             </Switch>
