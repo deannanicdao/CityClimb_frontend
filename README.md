@@ -34,7 +34,7 @@
 
 [Back-end Github](https://github.com/deannanicdao/CityClimb_backend.git)
 
-[Heroku Deployment](https://google.com/)
+[Heroku Deployment](https://city-climb.herokuapp.com/staff_login)
 
 <br />
 
@@ -129,38 +129,51 @@ The secondary target audiences are city climb patrons and new visitors who wish 
 - React 
 - React-Hook-Form
 - react-confirm-alert
-- Tailwind
-- Reactstrap
-- cloudinary 
-- DataURI
-- dotenv
-- multer
-- redux
-- redux-thunk
-- uuid
-- axios
+- Tailwind: Used for quickly styling elements using inline classes.
+- Reactstrap: Implements basic UI elements including cards and navbar.
+- cloudinary: Allows for the uploading and web hosting of images for individual climbs.
+- DataURI: DataURI is used to get an image's file extension and it's data in buffer form and parse as a base64 data URI string to pass to cloudinary.
+- dotenv: dotenv is used to add environment variables so they can be accessed in the app with process.env
+- multer: The multer package is used to handle multiform data. Used in our app as middleware to set storage to memory which turns the image file into buffer format. 
+- Redux: is a state management library. It is useful when an app has many states in several places of the app and is frequently updated over time; as future prototypes of the app has many social media features (with likes and comments), CityClimb incorporated redux. 
+- redux-thunk: middleware is used to write action creators, which return a function rather than an action. It was utilised to conditionally render an action for authentication by checking whether the user's admin role was `true` on the backend and checking the state for `isAdmin` vs `isAuthenticated` and JSON web token (default: null). 
+- uuid: Generates unique ID's for the alerts.
+- axios: An alternative to FETCH, wwas used because FETCH was not working.
 
 ### Backend
 - NodeJS
 - Express
 - Mongoose
 - MongoDB
-- Express Session
-- cloudinary
+- cloudinary: Allows for the uploading and web hosting of images for individual climbs.
 - DataURI
 - dotenv 
 - multer
-- jsonwebtoken
-- multer
+- jsonwebtoken: JWT authentication was used to manually integrate integration and returns a JWT in the payload when a user successfully logs in.
+- Bcrypt: Provides an added layer to the security by hashing and encrypting the passwords.
 
 ### Deployment
 - Heroku
+
+### QR Codes
+- QREncoder <br />
+
+Example QR Code. 
+
+Loads to the page of the climb: **Gushing Mountain**
+
+![Gushing Mountain](docs/images/qr_code.png)
 
 <br />
 
 ## Testing:
 
 - chai and chai-http
+
+### Video Tests
+https://streamable.com/z87ufh
+https://streamable.com/4lf82v
+https://streamable.com/lbv2q4
 
 <br />
 
