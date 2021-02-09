@@ -1,6 +1,4 @@
 import React from 'react'
-// import '../../App.css'
-import './Landing.css'
 
 const Landing = () => {
     return (
