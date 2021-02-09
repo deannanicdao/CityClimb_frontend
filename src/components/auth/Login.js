@@ -34,7 +34,7 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
         
         
     return (
-        <Fragment>
+        <div className="hero-container">
         <h1>Login</h1>
         <form className='form' onSubmit={e => onSubmit(e)}>
             <div className='form-group'>
@@ -46,7 +46,7 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
             </div>
             <input type="submit" className="btn btn-primary" value="Login"/>
         </form>
-        </Fragment>
+        </div>
     )
 }
 

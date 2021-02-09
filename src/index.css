@@ -28,6 +28,9 @@
     z-index: -1;
   }
   
+  /* Hero Container is used for the landing page */
+  /* Main Container is used for all other pages */
+
   .hero-container {
     /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
     height: 100vh;
