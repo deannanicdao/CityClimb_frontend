@@ -4,11 +4,11 @@ import ClimbRowCol from './ClimbRowCol'
 // This component fetches and displays the climbs for a gym/colour combo
 const ListByColour = (props) => {
 
-    const API_ENDPOINT = "http://localhost:8000"
+    // const API_ENDPOINT = "http://localhost:8000"
     const { gym, colour } = props
 
 
-    const url = `${API_ENDPOINT}/climbs/${gym}/${colour}`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs/${gym}/${colour}`
 
 
     const [climbs, setClimbs] = useState([])

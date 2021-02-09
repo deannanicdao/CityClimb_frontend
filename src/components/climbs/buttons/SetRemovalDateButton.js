@@ -3,9 +3,9 @@ import { Button } from 'reactstrap'
 // Clicking this button sets the removal date for 14 days from the current date
 const SetRemovalDateButton = ( {climb} ) => {
 
-    const API_ENDPOINT = "http://localhost:8000"
+    // const API_ENDPOINT = "http://localhost:8000"
   let { _id, gym, colour } = climb
-  const url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${_id}`
+  const url = `${process.env.REACT_APP_BACKEND_URL}/climbs/${gym}/${colour}/${_id}`
 
   function handleClick() {
 

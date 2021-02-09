@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form'
 
 const CreateClimbForm = () => {
 
-    const API_ENDPOINT = "http://localhost:8000"
-    const url = `${API_ENDPOINT}/climbs`
+    // const API_ENDPOINT = "http://localhost:8000"
+    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs`
 
 
     const { register, handleSubmit, errors } = useForm()

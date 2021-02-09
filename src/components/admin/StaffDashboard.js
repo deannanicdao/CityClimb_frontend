@@ -6,7 +6,7 @@ const StaffDashboard = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:8000/users")
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/users`)
         .then(res => res.json())
         .then(data => { 
             console.log(data)

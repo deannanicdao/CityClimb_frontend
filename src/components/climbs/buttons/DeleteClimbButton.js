@@ -7,13 +7,13 @@ import { useHistory } from "react-router-dom"
 const DeleteClimbButton = ({ climb }) => {
     let history = useHistory()
 
-    const API_ENDPOINT = "http://localhost:8000"
+    // const API_ENDPOINT = "http://localhost:8000"
 
 
     let { _id, gym, colour } = climb
     
     // Url for fetch request
-    const url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${_id}/edit`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs/${gym}/${colour}/${_id}/edit`
 
     // connects to the delete route in climb_controller.js for backend API
     // After deleting provide a confirmation alert and redirect back to previous page  

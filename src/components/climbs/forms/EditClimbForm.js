@@ -10,11 +10,11 @@ import { useHistory } from "react-router-dom"
 const EditClimbForm = (props) => {
     const { register, handleSubmit, errors } = useForm()
     let history = useHistory()
-    const API_ENDPOINT = "http://localhost:8000"
+    // const API_ENDPOINT = "http://localhost:8000"
 
     let { gym, colour, climbId } = props.match.params
 
-    let url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${climbId}`
+    let url = `${process.env.REACT_APP_BACKEND_URL}/climbs/${gym}/${colour}/${climbId}`
 
     const [climb, setClimb] = useState([])
 
