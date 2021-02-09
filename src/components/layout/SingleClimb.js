@@ -14,7 +14,6 @@ const SingleClimb = (props) => {
 
     // TODO: Look into memoization 
     // If a climb is being passed as a prop we dont need to fetch
-    // const API_ENDPOINT = "http://localhost:8000"
     const { gym, colour, climbId } = props.match.params
 
     console.log("inside single climb")
@@ -39,7 +38,7 @@ const SingleClimb = (props) => {
         return () => {
             // console.log("Unmounted")
         }
-    }, [])
+        }, [])
     
     return (
         <>

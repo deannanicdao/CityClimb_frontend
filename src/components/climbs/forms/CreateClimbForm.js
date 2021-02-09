@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom"
 
 const CreateClimbForm = () => {
     let history = useHistory()
-    const API_ENDPOINT = "http://localhost:8000"
-    const url = `${API_ENDPOINT}/climbs`
+
+    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs`
 
 
     const { register, handleSubmit, errors } = useForm()

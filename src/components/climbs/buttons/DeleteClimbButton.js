@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom"
 const DeleteClimbButton = ({ climb }) => {
     let history = useHistory()
 
-    // const API_ENDPOINT = "http://localhost:8000"
 
 
     let { _id, gym, colour } = climb

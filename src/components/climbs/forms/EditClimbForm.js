@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom"
 const EditClimbForm = (props) => {
     const { register, handleSubmit, errors } = useForm()
     let history = useHistory()
-    // const API_ENDPOINT = "http://localhost:8000"
+    // const  = "http://localhost:8000"
 
     let { gym, colour, climbId } = props.match.params
 

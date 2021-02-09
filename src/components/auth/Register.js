@@ -23,9 +23,6 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
   
   const onSubmit = async (e) => {
-    console.log('Form data:')
-    console.log(formData)
-    // console.log(admin)
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -53,11 +50,12 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
     if (name && email && password && staffNumber !== "") {
       register({ name, email, password, staffNumber });
       console.log('User registered')
-      return <Redirect to="/staff_dashboard" />
     }
     
+    <Redirect to="/staff_dashboard" />
+    
   };
-
+  
 
 
   return (
