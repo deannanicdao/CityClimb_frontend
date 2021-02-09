@@ -43,7 +43,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
 
       <NavItem>
         <NavLink> 
-          <a onClick={logout} href="#!"> Logout </a>
+          <a onClick={logout} href="/"> Logout </a>
         </NavLink>
       </NavItem>
 
@@ -72,7 +72,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
 
       <NavItem>
         <NavLink> 
-          <a onClick={logout} href="#!"> Logout </a>
+          <a onClick={logout} href="/"> Logout </a>
         </NavLink>
       </NavItem>
 
@@ -119,7 +119,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
       <Collapse isOpen={isOpen} navbar >
         <Nav navbar >
           <Fragment> 
-            {isAdmin ? 
+            { isAdmin ? 
               adminLinks : isAuthenticated ? 
               authLinks : guestLinks } 
           </Fragment>

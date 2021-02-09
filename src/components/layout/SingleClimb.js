@@ -14,12 +14,12 @@ const SingleClimb = (props) => {
 
     // TODO: Look into memoization 
     // If a climb is being passed as a prop we dont need to fetch
-    const API_ENDPOINT = "http://localhost:8000"
+    // const API_ENDPOINT = "http://localhost:8000"
     const { gym, colour, climbId } = props.match.params
 
     console.log("inside single climb")
 
-    const url = `${API_ENDPOINT}/climbs/${gym}/${colour}/${climbId}`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs/${gym}/${colour}/${climbId}`
 
     const [climb, setClimb] = useState([])
 

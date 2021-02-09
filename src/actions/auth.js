@@ -67,7 +67,7 @@ export const register = formData => async dispatch => {
       payload: res.data
     });
 
-    dispatch(loadUser());
+    // dispatch(loadUser());
 
   } catch (err) {
     const errors = err.response.data.errors;
@@ -83,19 +83,45 @@ export const register = formData => async dispatch => {
 };
 
 // Login User
-export const login = (email, password) => async dispatch => {
-  const body = { email, password };
+export const login = (email, password ) => async dispatch => {
+  const body = { email, password }
 
   try {
-    const res = await api.post('/auth/login', body);
+    const res = await api.post('/auth/login', body)
     console.log("inside Login Success")
     console.log(res.data)
+
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
-    });
+    })
+    
+    console.log('This is the res.data:')
+    console.log(res.data)
 
-    dispatch(loadUser());
+
+    console.log('This is the res.user:')
+    console.log(res.data.user)
+    const user = res.data.user
+
+    // console.log('This is the token:')
+    // console.log(token)
+
+    console.log('This is the user.id:')
+    console.log(user.id)
+
+    console.log('This is the user.admin:')
+    console.log(user.admin)
+
+    // let admin = res.data.admin
+
+    dispatch(loadUser())
+    if (user.admin == true) {
+      dispatch(loadAdmin())
+    } else {
+      dispatch(loadUser())
+    }
+
   } catch (err) {
     const errors = err.response.data.errors;
 

@@ -3,12 +3,13 @@ import ClimbRowCol from '../climbs/ClimbRowCol'
 
 const Schedule = () => {
 
+    console.log()
     const [climbs, setClimbs] = useState([])
 
     useEffect(() => {
 
         // Gets all climbs 
-        fetch("http://localhost:8000/schedule/")
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/schedule/`)
             .then(res => res.json())
             .then(data => {
                 setClimbs(data)
