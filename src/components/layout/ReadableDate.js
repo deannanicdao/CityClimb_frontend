@@ -14,7 +14,7 @@ const ReadableDate = ({ date, year }) => {
     
     return (
         <span>
-        {readableDate}
+            {readableDate}
         </span>)
 }
 
