@@ -152,8 +152,6 @@ The secondary target audiences are city climb patrons and new visitors who wish 
 - multer
 - jsonwebtoken
 - multer
-- AWS S3
-- Atlas
 
 ### Deployment
 - Heroku
@@ -172,7 +170,7 @@ The secondary target audiences are city climb patrons and new visitors who wish 
 
 - GitHub
 
-Git was used...
+Dianne created two repositories on Github for the front end and the back end. These were designated as the Origins. Both Jeremy and Justin forked off Deannes main repositories and had our own seperate Github repository. Each team member also had a local git repository which they would make commits to before pushing to their git hub repo. Once major tasks were completed team members would make branch checkouts and then pull request to the origin repo. When large amounts of data from different repos were being merged we would do it together to ensure every one was on the same page and resolve any conflicts that arose together.
 
 <br />
 
