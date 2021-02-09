@@ -50,7 +50,7 @@ const SingleClimb = (props) => {
                     <iframe class="responsive-iframe" src={`https://www.youtube.com/embed/${climb.video}`}>   </iframe>
                 </div>
 
-                    <h1 className="display-3">{climb.wall}</h1>
+                    <h1 className="display-3">{climb.title}</h1>
                     <p className="lead">Colour: {climb.colour} </p>
                     <p className="lead">Location: {climb.gym} </p>
                     <p className="lead">Date Set: <ReadableDate date={climb.createdAt}/> </p>
