@@ -34,7 +34,7 @@
 
 [Back-end Github](https://github.com/deannanicdao/CityClimb_backend.git)
 
-[Heroku Deployment](https://city-climb.herokuapp.com/staff_login)
+[Heroku Deployment](https://city-climb.herokuapp.com)
 
 <br />
 
