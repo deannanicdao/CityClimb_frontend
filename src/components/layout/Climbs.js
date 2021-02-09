@@ -11,7 +11,7 @@ const Climbs = () => {
     
 
     return (
-        <Fragment>
+        <div className="main-container">
             <p className='large'>Select Gym</p>
             <form>
                 <input type="radio" name="gym" value="milton" ref={register}/>Milton
@@ -22,7 +22,7 @@ const Climbs = () => {
             {selectedGym == "milton" && <GymView gym={"milton"}/>}
             {selectedGym == "newstead" && <GymView gym={"newstead"}/>}
             {selectedGym == "westend" && <GymView gym={"westend"}/>}
-        </Fragment>
+        </div>
     )
 }
 

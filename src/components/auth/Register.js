@@ -57,7 +57,7 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
   }
 
   return (
-    <Fragment>
+    <div className="hero-container">
       <h1 className="large text-primary">City Climb</h1>
       <p className="lead">
         <i className="fas fa-user" /> Staff Register
@@ -110,7 +110,7 @@ const Register = ({ setAlert, register, isAuthenticated, isAdmin }) => {
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-    </Fragment>
+    </div>
   );
 };
 
