@@ -1,11 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from "react-router-dom"
 
 
 const CreateClimbForm = () => {
-
-    // const API_ENDPOINT = "http://localhost:8000"
-    const url = `${process.env.REACT_APP_BACKEND_URL}/climbs`
+    let history = useHistory()
+    const API_ENDPOINT = "http://localhost:8000"
+    const url = `${API_ENDPOINT}/climbs`
 
 
     const { register, handleSubmit, errors } = useForm()
@@ -14,7 +15,7 @@ const CreateClimbForm = () => {
         const formData = new FormData()
 
         formData.append("gym", data.gym)
-        formData.append("wall", data.wall)
+        formData.append("title", data.title)
         formData.append("colour", data.colour)
         formData.append("youtubeUrl", data.youtubeUrl)
         formData.append("image", data.image[0])
@@ -24,7 +25,11 @@ const CreateClimbForm = () => {
         fetch(url, {
             method: 'POST',
             body: formData,
-        })
+        }).then(res => res.json()).then((results) => {(alert(`Climb Created Successfully`))})
+
+
+
+        history.push(`/`)
     }
 
     console.log(errors)
@@ -38,15 +43,15 @@ const CreateClimbForm = () => {
             <label className="text-gray-700">
                     Gym
                     <select name="gym" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
-                        <option value="Milton">Milton</option>
-                        <option value="Newstead">Newstead</option>
-                        <option value="West End">West End</option>
+                        <option value="milton">Milton</option>
+                        <option value="newstead">Newstead</option>
+                        <option value="westend">West End</option>
                     </select>
                 </label>
 
                 <label className="text-gray-700">
-                    Wall
-      <input type="text" name="wall" placeholder="Wall name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                Climb Name
+      <input type="text" name="title" placeholder="Climb name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                     </input>
                 </label>
 
@@ -70,7 +75,7 @@ const CreateClimbForm = () => {
 
                 <br></br>
                 <br></br>
-                {/* https://tailwindcomponents.com/component/tailwind-file-upload */}
+
                
                     <input ref={register} type="file" name="image" />
 

@@ -13,7 +13,7 @@ import AdminRoute from './AdminRoute';
 
 export const Routes = () => {
     return (
-        <section className="container">
+        <section>
             <Switch>
                 <AdminRoute exact path="/staff_register" component={Register} />
                 <Route exact path="/staff_login" component={Login} />

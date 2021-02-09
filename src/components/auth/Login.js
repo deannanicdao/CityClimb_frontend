@@ -40,11 +40,9 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
             <div className='form-group'>
                 <input type='text' placeholder='Email Address' name='email' value={email} onChange={e => onChange(e)} required />
             </div>
-            {/* <div className='form-group'>
-                <input type='text' placeholder='Staff Number' name='staffNumber' value={staffNumber} onChange={e => onChange(e)} required />
-            </div> */}
+
             <div className='form-group'>
-                <input type='text' placeholder='Password' name='password' value={password} onChange={e => onChange(e)} required />
+                <input type='password' placeholder='Password' name='password' value={password} onChange={e => onChange(e)} required />
             </div>
             <input type="submit" className="btn btn-primary" value="Login"/>
         </form>
