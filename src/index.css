@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* yt-container and responsive-iframe are used for the embeded youtube */
+/* videos on each individual climb */
 .yt-container {
     position: relative;
     overflow: hidden;
@@ -9,7 +11,6 @@
     padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625)*/
   }
   
-  /* Then style the iframe to fit in the container div with full height and width */
   .responsive-iframe {
     position: absolute;
     top: 0;
@@ -20,6 +21,8 @@
     height: 100%;
   }
 
+  /* video is used for the background video that plays on the landing page */
+
   video {
     object-fit: cover;
     width: 100%;
@@ -29,10 +32,9 @@
   }
   
   /* Hero Container is used for the landing page, staff login and staff register */
-  /* Main Container is used for all climbs and schedule pages */
+  /* Main Container is used for climbs and schedule pages */
 
   .hero-container {
-    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
     height: 100vh;
     width: 100%;
     display: flex;
@@ -85,18 +87,6 @@
       'Lucida Sans', Arial, sans-serif;
   }
   
-  .hero-btns {
-    margin-top: 32px;
-  }
-  
-  .hero-btns .btn {
-    margin: 6px;
-  }
-  
-  .fa-play-circle {
-    margin-left: 4px;
-  }
-  
   @media screen and (max-width: 960px) {
     .hero-container > h1 {
       font-size: 70px;
@@ -136,13 +126,5 @@
       font-size: 30px;
     }
   
-    .btn-mobile {
-      display: block;
-      text-decoration: none;
-    }
-  
-    .btn {
-      width: 100%;
-    }
   }
 
