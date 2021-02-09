@@ -1,6 +1,4 @@
 import React from 'react'
-// import '../../App.css'
-import './Landing.css'
 
 const Landing = () => {
     return (
@@ -12,6 +10,7 @@ const Landing = () => {
             <p> Climbers Companion </p>
 
         </div>
+
     )
 }
 

@@ -44,7 +44,7 @@ const Schedule = () => {
     let westendNew = climbsNew.filter(climb => climb.gym == "westend")
 
     return (
-        <>
+        <div className="main-container">
             <br />
             <details>
                 <summary>Leaving Soon</summary>
@@ -70,7 +70,7 @@ const Schedule = () => {
                 <h3>West End</h3>
                 <ClimbRowCol climbs={westendNew} showCreatedDate={true} />
             </details>
-        </>
+        </div>
     )
 }
 

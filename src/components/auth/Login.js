@@ -34,8 +34,9 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
         
         
     return (
-        <Fragment>
-        <h1>Login</h1>
+        <div className="main-container">
+        <p>Staff Login</p>
+        <br />
         <form className='form' onSubmit={e => onSubmit(e)}>
             <div className='form-group'>
                 <input type='text' placeholder='Email Address' name='email' value={email} onChange={e => onChange(e)} required />
@@ -46,7 +47,7 @@ const Login = ({ setAlert, login, isAuthenticated, isAdmin }) => {
             </div>
             <input type="submit" className="btn btn-primary" value="Login"/>
         </form>
-        </Fragment>
+        </div>
     )
 }
 

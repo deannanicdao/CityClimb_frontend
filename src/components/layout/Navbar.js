@@ -114,7 +114,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, isAdmin }, logout }) => {
 
   return (
     <Navbar color="light" light expand="lg" className="text-right" style={{justify_content: "flex-end"}}>
-      <NavbarBrand href="/"><img src="./icon.png" alt="logo" width="50px" height="50px"></img></NavbarBrand>
+      <NavbarBrand href="/"><img src="/icon.png" alt="logo" width="50px" height="50px"></img></NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar >
         <Nav navbar >
