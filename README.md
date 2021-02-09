@@ -11,7 +11,7 @@
 | #   | Content                                                                      |
 | --- | ---------------------------------------------------------------------------- |
 | 1   | [App Links](#App-links)                                               |
-| 2   | [App Description](#App-description:)                                          |
+| 2   | [App Description](#App-Description:)                                          |
 | 3   | [Purpose](#Purpose)            |
 | 4   | [Functionality and Features](#Functionality-&-features)                              |
 | 5   | [Target Audience](#Target-audience)                              |
@@ -38,7 +38,7 @@
 
 <br />
 
-## App-description:
+## App Description:
 City Climb companion app is a mobile, tablet and desktop web application available to the public.
 
 It allows City Climb staff to upload new and existing climbs with its gym location, colour (difficulty rating), an image and a how to video.
