@@ -13,14 +13,14 @@ const Climb = (props) => {
 
 
     const climb = props.climb
-    let { _id, wall, colour, image, gym } = climb
+    let { _id, title, colour, image, gym } = climb
 
     return (
         <Card>
             <Link to={`/climbs/${gym}/${colour}/${_id}`}>
                 <CardImg top width="100%" src={`http://res.cloudinary.com/coderacademy/image/upload${image}`} alt="Card image cap" />
                 <CardBody>
-                    <CardTitle tag="h5">{wall}</CardTitle>
+                    <CardTitle tag="h5">{title}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{colour}</CardSubtitle>
                     <CardText>{_id}</CardText>
                 </CardBody>

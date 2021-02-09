@@ -39,7 +39,7 @@ const EditClimbForm = (props) => {
     useEffect(() => {
         console.log("Edit Climb useEffect Rendered on Climb change")
         console.log(climb)
-        wall = climb.wall
+        title = climb.title
         image = climb.image
         video = climb.video
 
@@ -48,7 +48,7 @@ const EditClimbForm = (props) => {
         }
     }, [climb])
 
-    let { wall, image, video} = climb
+    let { title, image, video} = climb
 
     const youtubeUrl = `https://www.youtube.com/embed/${climb.video}`
 
@@ -59,7 +59,7 @@ const EditClimbForm = (props) => {
         const formData = new FormData()
 
         formData.append("gym", data.gym)
-        formData.append("wall", data.wall)
+        formData.append("title", data.title)
         formData.append("colour", data.colour)
         formData.append("youtubeUrl", data.youtubeUrl)
         formData.append("image", data.image[0])
@@ -68,7 +68,10 @@ const EditClimbForm = (props) => {
         fetch(`${url}/edit`, {
             method: 'PATCH',
             body: formData,
-        }).then(res => res.json()).then((results) => setClimb(results.result))
+        }).then(res => res.json())
+        .then((results) => setClimb(results.result))
+        .then((results) => {(alert(`Climb updated`))})
+        
 
         history.push(`/climbs/${data.gym}/${data.colour}/${climbId}/edit`)
     }
@@ -85,7 +88,7 @@ const EditClimbForm = (props) => {
             <h5>Current Details</h5>
             <ul>
                 <li><b>Gym:</b> {gym}</li>
-                <li>Wall: {wall}</li>
+                <li>Climb Name: {title}</li>
                 <li>Colour: {colour}</li>
                 <li>Youtube ID: {video}</li>
                 <li>Image ID: {image}</li>
@@ -102,11 +105,16 @@ const EditClimbForm = (props) => {
                         <option value="westend">West End</option>
                     </select>
                 </label>
+
                 <label className="text-gray-700">
                     Climb Name
-      <input type="text" name="wall" placeholder="Climb name" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+      <input type="text" name="title" placeholder="Climb name" ref={register({required: 'Required', maxLength: {value: 24, message: 'Max length is 24'}})} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
                     </input>
                 </label>
+                <br />
+        {errors.title && <h1 className="text-red-500 required-dot">{errors.title.message}</h1>}
+        <br />
+
                 <label className="text-gray-700">
                     Colour
       <select name="colour" ref={register({ required: true })} className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
@@ -127,8 +135,8 @@ const EditClimbForm = (props) => {
                 <br></br>
                 <br></br>
                
-                    <input ref={register} type="file" name="image" />
-
+                    <input ref={register} type="file" name="image" accept="/image*"/>
+                    
                 <br></br>
                 <button type="submit" className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-1/6 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                     Update Climb
@@ -143,3 +151,4 @@ const EditClimbForm = (props) => {
 
 export default EditClimbForm
 
+// ref={register({required: 'Required', maxLength: {value: 24, message: 'Max length is 24'}})} 
